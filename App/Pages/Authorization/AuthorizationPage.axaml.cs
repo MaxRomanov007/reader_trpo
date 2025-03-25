@@ -1,16 +1,11 @@
-using System;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
-using App.Domain.Utils;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
-using BookService.Database.models;
 
-namespace App.Pages;
+namespace App.Pages.Authorization;
 
 public partial class AuthorizationPage : UserControl
 {
@@ -25,19 +20,19 @@ public partial class AuthorizationPage : UserControl
     {
         InitializeComponent();
         DataContext = _credentials;
-        MessageTextBlock.ShowTemporaryText(message);
+        TextBlockExtensions.ShowTemporaryText(MessageTextBlock, message);
     }
 
     private async void AuthorizationButton_OnClick(object? sender, RoutedEventArgs e)
     {
         if (_credentials.Email == null || _credentials.Password == null)
         {
-            ErrorTextBlock.ShowTemporaryText("Введите email и пароль");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите email и пароль");
             return;
         }
 
         var result = await Users.Authorize(_credentials.Email, _credentials.Password);
-        MessageTextBlock.ShowTemporaryText(result);
+        TextBlockExtensions.ShowTemporaryText(MessageTextBlock, result);
     }
 
     private void ToRegistrationButton_OnClick(object? sender, RoutedEventArgs e)

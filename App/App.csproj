@@ -22,4 +22,27 @@
     <ItemGroup>
       <ProjectReference Include="..\BookService\BookService.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\Authorization\AuthorizationPage.axaml.cs">
+        <DependentUpon>AuthorizationPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Authorization\ConfirmEmailPage.axaml.cs">
+        <DependentUpon>ConfirmEmailPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Authorization\LostPasswordPage.axaml.cs">
+        <DependentUpon>LostPasswordPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Authorization\NewPasswordPage.axaml.cs">
+        <DependentUpon>NewPasswordPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Authorization\RegistrationPage.axaml.cs">
+        <DependentUpon>RegistrationPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

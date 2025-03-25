@@ -2,13 +2,11 @@ using System;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 
-namespace App.Pages;
+namespace App.Pages.Authorization;
 
 public partial class LostPasswordPage : UserControl
 {
@@ -22,26 +20,26 @@ public partial class LostPasswordPage : UserControl
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new AuthorizationPage());
+        MainContent.NavigateTo(new Authorization.AuthorizationPage());
     }
 
     private async void FindButton_OnClick(object? sender, RoutedEventArgs e)
     {
         if (_credentials.Email == null)
         {
-            ErrorTextBlock.ShowTemporaryText("Введите email");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите email");
             return;
         }
 
         if (!await Users.IsEmailExists(_credentials.Email))
         {
-            ErrorTextBlock.ShowTemporaryText("Пользователя с таким email не существует");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Пользователя с таким email не существует");
             return;
         }
 
-        if (!await ConfirmEmailPage.Check(_credentials.Email, this))
+        if (!await Authorization.ConfirmEmailPage.Check(_credentials.Email, this))
         {
-            ErrorTextBlock.ShowTemporaryText("Почта не подтверждена");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Почта не подтверждена");
             return;
         }
         

@@ -5,7 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using BookService;
 
-namespace App.Pages;
+namespace App.Pages.Authorization;
 
 public partial class NewPasswordPage : UserControl
 {
@@ -21,7 +21,7 @@ public partial class NewPasswordPage : UserControl
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new AuthorizationPage("Пароль не был изменен"));
+        MainContent.NavigateTo(new Authorization.AuthorizationPage("Пароль не был изменен"));
     }
 
     private async void ChangePasswordButton_OnClick(object? sender, RoutedEventArgs e)
@@ -29,17 +29,17 @@ public partial class NewPasswordPage : UserControl
         if (_credentials.Password is null ||
             _credentials.RepeatPassword is null)
         {
-            ErrorTextBlock.ShowTemporaryText("Введите новый пароль");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите новый пароль");
             return;
         }
 
         var result = await Users.ChangePassword(_email, _credentials.Password);
         if (!string.IsNullOrEmpty(result))
         {
-            ErrorTextBlock.ShowTemporaryText(result);
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, result);
             return;
         }
         
-        MainContent.NavigateTo(new AuthorizationPage("Пароль изменен"));
+        MainContent.NavigateTo(new Authorization.AuthorizationPage("Пароль изменен"));
     }
 }

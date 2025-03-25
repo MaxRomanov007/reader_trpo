@@ -5,7 +5,7 @@ using App.Domain.Utils;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace App.Pages;
+namespace App.Pages.Authorization;
 
 public interface IMessageShower
 {
@@ -62,7 +62,7 @@ public partial class ConfirmEmailPage : UserControl
     {
         if (CodeTextBox.Text != _code)
         {
-            ErrorTextBlock.ShowTemporaryText("Неверный код");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Неверный код");
             return;
         }
 

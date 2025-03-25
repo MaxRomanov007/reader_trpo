@@ -1,13 +1,11 @@
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 
-namespace App.Pages;
+namespace App.Pages.Authorization;
 
 public partial class RegistrationPage : UserControl
 {
@@ -24,11 +22,11 @@ public partial class RegistrationPage : UserControl
             _credentials.Password == null ||
             _credentials.RepeatPassword == null)
         {
-            ErrorTextBlock.ShowTemporaryText("Введите данные");
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите данные");
             return;
         }
 
-        if (!await ConfirmEmailPage.Check(_credentials.Email, this))
+        if (!await Authorization.ConfirmEmailPage.Check(_credentials.Email, this))
         {
             return;
         }
@@ -36,15 +34,15 @@ public partial class RegistrationPage : UserControl
         var result = await Users.Register(_credentials.Email, _credentials.Password);
         if (result != string.Empty)
         {
-            ErrorTextBlock.ShowTemporaryText(result);
+            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, result);
             return;
         }
         
-        MainContent.NavigateTo(new AuthorizationPage("Вы успешно зарегистрированы"));
+        MainContent.NavigateTo(new Authorization.AuthorizationPage("Вы успешно зарегистрированы"));
     }
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new AuthorizationPage());
+        MainContent.NavigateTo(new Authorization.AuthorizationPage());
     }
 }

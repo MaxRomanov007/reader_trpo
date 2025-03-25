@@ -5,7 +5,7 @@
              xmlns:cred="clr-namespace:App.Domain.Models"
              x:DataType="cred:Credentials"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="App.Pages.AuthorizationPage">
+             x:Class="App.Pages.Authorization.AuthorizationPage">
     <Grid
         ColumnDefinitions="*, 2*, *"
         RowDefinitions="*, Auto, *">

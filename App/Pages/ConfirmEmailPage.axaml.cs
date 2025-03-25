@@ -17,11 +17,11 @@ public partial class ConfirmEmailPage : UserControl
     private const int CodeLength = 6;
     
     private readonly UserControl _back;
-    private readonly IMessageShower _messageShower;
+    private readonly IMessageShower? _messageShower;
     private readonly string _code;
     private readonly TaskCompletionSource<bool> _completionSource;
 
-    private ConfirmEmailPage(UserControl back, IMessageShower messageShower, string code, TaskCompletionSource<bool> completionSource)
+    private ConfirmEmailPage(UserControl back, IMessageShower? messageShower, string code, TaskCompletionSource<bool> completionSource)
     {
         InitializeComponent();
         _back = back;
@@ -30,7 +30,7 @@ public partial class ConfirmEmailPage : UserControl
         _completionSource = completionSource;
     }
     
-    public static async Task<bool> Check(string? email, UserControl back, IMessageShower messageShower)
+    public static async Task<bool> Check(string? email, UserControl back, IMessageShower? messageShower = null)
     {
         var code = Utils.GenerateRandomDigits(CodeLength);
         try
@@ -39,7 +39,8 @@ public partial class ConfirmEmailPage : UserControl
         }
         catch
         {
-            messageShower.ShowMessage("Ошибка отправки письма");
+            messageShower?.ShowMessage("Ошибка отправки письма");
+
             return false;
         }
 
@@ -65,8 +66,8 @@ public partial class ConfirmEmailPage : UserControl
             return;
         }
 
-        _messageShower.ShowMessage("Почта подтверждена");
-        _completionSource.SetResult(true);
+        _messageShower?.ShowMessage("Почта подтверждена");
         MainContent.NavigateTo(_back);
+        _completionSource.SetResult(true);
     }
 }

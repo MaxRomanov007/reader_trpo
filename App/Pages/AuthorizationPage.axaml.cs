@@ -12,40 +12,41 @@ using BookService.Database.models;
 
 namespace App.Pages;
 
-public partial class AuthorizationPage : UserControl, IMessageShower
+public partial class AuthorizationPage : UserControl
 {
-    private Credentials _Credentials = new();
+    private readonly Credentials _credentials = new();
     public AuthorizationPage()
     {
         InitializeComponent();
-        DataContext = _Credentials;
+        DataContext = _credentials;
     }
 
     public AuthorizationPage(string message)
     {
         InitializeComponent();
-        DataContext = _Credentials;
+        DataContext = _credentials;
         MessageTextBlock.ShowTemporaryText(message);
-    }
-
-    public void ShowMessage(string message)
-    {
-        ErrorTextBlock.ShowTemporaryText(message);
     }
 
     private async void AuthorizationButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (_Credentials.Email == null || _Credentials.Password == null)
+        if (_credentials.Email == null || _credentials.Password == null)
         {
             ErrorTextBlock.ShowTemporaryText("Введите email и пароль");
             return;
         }
-        var isValid = await ConfirmEmailPage.Check(EmailTextBox.Text, this, this);
-        Console.WriteLine(isValid);
+
+        var result = await Users.Authorize(_credentials.Email, _credentials.Password);
+        MessageTextBlock.ShowTemporaryText(result);
     }
 
     private void ToRegistrationButton_OnClick(object? sender, RoutedEventArgs e)
     {
         MainContent.NavigateTo(new RegistrationPage());
+    }
+
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        MainContent.NavigateTo(new LostPasswordPage());
     }
 }

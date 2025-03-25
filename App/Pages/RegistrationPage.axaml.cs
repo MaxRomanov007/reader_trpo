@@ -9,18 +9,13 @@ using BookService;
 
 namespace App.Pages;
 
-public partial class RegistrationPage : UserControl, IMessageShower
+public partial class RegistrationPage : UserControl
 {
     private readonly Credentials _credentials = new();
     public RegistrationPage()
     {
         InitializeComponent();
         DataContext = _credentials;
-    }
-
-    public void ShowMessage(string message)
-    {
-        MessageTextBlock.ShowTemporaryText(message);
     }
 
     private async void RegistrationButton_OnClick(object? sender, RoutedEventArgs e)
@@ -33,7 +28,7 @@ public partial class RegistrationPage : UserControl, IMessageShower
             return;
         }
 
-        if (!await ConfirmEmailPage.Check(_credentials.Email, this, this))
+        if (!await ConfirmEmailPage.Check(_credentials.Email, this))
         {
             return;
         }

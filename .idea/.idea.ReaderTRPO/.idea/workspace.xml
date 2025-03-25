@@ -7,14 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Email Sender added">
-      <change afterPath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml.cs" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Confirm Password Page added">
+      <change afterPath="$PROJECT_DIR$/App/Pages/LostPasswordPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/LostPasswordPage.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/NewPasswordPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/NewPasswordPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
@@ -42,6 +44,12 @@
     &quot;accountId&quot;: &quot;fc068bd7-c37a-43a2-8bd0-e319f815621a&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -104,7 +112,7 @@
       <updated>1742833543053</updated>
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
-      <workItem from="1742921351313" duration="5415000" />
+      <workItem from="1742921351313" duration="9730000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -154,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742923538793</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Confirm Password Page added">
+      <option name="closed" value="true" />
+      <created>1742928242896</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742928242896</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +186,26 @@
     <MESSAGE value="Authorization page" />
     <MESSAGE value="RegistrationPage added" />
     <MESSAGE value="Email Sender added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Email Sender added" />
+    <MESSAGE value="Confirm Password Page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Confirm Password Page added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/App/Pages/NewPasswordPage.axaml.cs</url>
+          <line>17</line>
+          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'">
+            <startOffsets>
+              <option value="404" />
+            </startOffsets>
+            <endOffsets>
+              <option value="431" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

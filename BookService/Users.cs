@@ -9,6 +9,7 @@ public static class Users
 {
     private const string InvalidCredentialsError = "Неверные логин или пароль";
     private const string UserAlreadyExistsError = "Пользователь с таким email уже существует";
+    private const string UserNotFoundError = "Пользователь с таким email не найден";
 
     public static async Task<string> Authorize(string? email, string? password)
     {
@@ -51,6 +52,47 @@ public static class Users
             Email = email ?? string.Empty,
         });
 
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (Exception e)
+        {
+            return e.Message;
+        }
+
+        return string.Empty;
+    }
+
+    public static async Task<bool> IsEmailExists(string? email)
+    {
+        await using var context = new BooksContext();
+
+        return await context.Users.AnyAsync(u => u.Email == email);
+    }
+
+    public static async Task<string> ChangePassword(string? email, string? password)
+    {
+        await using var context = new BooksContext();
+        
+        var user = await context.Users.FirstOrDefaultAsync(user => user.Email == email);
+
+        if (user is null)
+        {
+            return UserNotFoundError;
+        }
+        
+        var passHash = Encoding.UTF8.GetBytes(
+            BCrypt.Net.BCrypt.HashPassword(
+                password,
+                BCrypt.Net.BCrypt.GenerateSalt(10)
+            )
+        );
+
+        user.Password = passHash;
+
+        context.Users.Update(user);
+        
         try
         {
             await context.SaveChangesAsync();

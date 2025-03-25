@@ -7,19 +7,20 @@ namespace BookService;
 
 public static class Users
 {
-    public const string InvalidCredentialsError = "Неверные логин или пароль";
-    public const string UserAlreadyExistsError = "Пользователь с таким email уже существует";
+    private const string InvalidCredentialsError = "Неверные логин или пароль";
+    private const string UserAlreadyExistsError = "Пользователь с таким email уже существует";
 
-    public static string Authorize(string? email, string? password)
+    public static async Task<string> Authorize(string? email, string? password)
     {
-        using var context = new BooksContext();
+        await using var context = new BooksContext();
 
-        var user = context.Users.Include(user => user.Role).FirstOrDefault(user => user.Email == email);
+        var user = await context.Users.Include(user => user.Role).FirstOrDefaultAsync(user => user.Email == email);
 
         if (user == null)
         {
             return InvalidCredentialsError;
         }
+
         if (!BCrypt.Net.BCrypt.Verify(password, Encoding.UTF8.GetString(user.Password)))
         {
             return InvalidCredentialsError;
@@ -28,15 +29,15 @@ public static class Users
         return user.Role.Name;
     }
 
-    public static string Register(string? email, string? password)
+    public static async Task<string> Register(string? email, string? password)
     {
-        using var context = new BooksContext();
+        await using var context = new BooksContext();
 
         if (context.Users.Any(u => u.Email == email))
         {
             return UserAlreadyExistsError;
         }
-        
+
         var passHash = Encoding.UTF8.GetBytes(
             BCrypt.Net.BCrypt.HashPassword(
                 password,
@@ -52,7 +53,7 @@ public static class Users
 
         try
         {
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
         catch (Exception e)
         {

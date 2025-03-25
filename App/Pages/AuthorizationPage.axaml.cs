@@ -12,7 +12,7 @@ using BookService.Database.models;
 
 namespace App.Pages;
 
-public partial class AuthorizationPage : UserControl
+public partial class AuthorizationPage : UserControl, IMessageShower
 {
     private Credentials _Credentials = new();
     public AuthorizationPage()
@@ -28,13 +28,20 @@ public partial class AuthorizationPage : UserControl
         MessageTextBlock.ShowTemporaryText(message);
     }
 
-    private void AuthorizationButton_OnClick(object? sender, RoutedEventArgs e)
+    public void ShowMessage(string message)
+    {
+        ErrorTextBlock.ShowTemporaryText(message);
+    }
+
+    private async void AuthorizationButton_OnClick(object? sender, RoutedEventArgs e)
     {
         if (_Credentials.Email == null || _Credentials.Password == null)
         {
             ErrorTextBlock.ShowTemporaryText("Введите email и пароль");
             return;
         }
+        var isValid = await ConfirmEmailPage.Check(EmailTextBox.Text, this, this);
+        Console.WriteLine(isValid);
     }
 
     private void ToRegistrationButton_OnClick(object? sender, RoutedEventArgs e)

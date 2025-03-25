@@ -16,11 +16,11 @@ public static class EmailSender
         Settings = new Lazy<EmailSettings>(() =>
         {
             string envPath = Path.Combine(
-                Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty, 
+                Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty,
                 ".env"
             );
             Env.Load(envPath);
-            
+
             return new EmailSettings
             {
                 Host = Env.GetString("SMTP_HOST"),
@@ -34,34 +34,25 @@ public static class EmailSender
         });
     }
 
-    public static async void SendAsync(string toEmail, string subject, string text, bool isHtml = false)
+    public static async void SendAsync(string? toEmail, string subject, string text, bool isHtml = false)
     {
-        try
+        var settings = Settings.Value;
+        var message = new MimeMessage();
+
+        message.From.Add(new MailboxAddress(settings.FromName, settings.FromEmail));
+        message.To.Add(new MailboxAddress(string.Empty, toEmail));
+        message.Subject = subject;
+
+        message.Body = isHtml
+            ? new TextPart("html") { Text = text }
+            : new TextPart("plain") { Text = text };
+
+        using (var client = new SmtpClient())
         {
-            var settings = Settings.Value;
-            var message = new MimeMessage();
-            
-            message.From.Add(new MailboxAddress(settings.FromName, settings.FromEmail));
-            message.To.Add(new MailboxAddress(string.Empty, toEmail));
-            message.Subject = subject;
-
-            message.Body = isHtml 
-                ? new TextPart("html") { Text = text } 
-                : new TextPart("plain") { Text = text };
-
-            using (var client = new SmtpClient())
-            {
-                await client.ConnectAsync(settings.Host, settings.Port, settings.UseSsl);
-                await client.AuthenticateAsync(settings.User, settings.Password);
-                await client.SendAsync(message);
-                await client.DisconnectAsync(true);
-            }
-
-            Console.WriteLine("Письмо отправлено!");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Ошибка: {ex.Message}");
+            await client.ConnectAsync(settings.Host, settings.Port, settings.UseSsl);
+            await client.AuthenticateAsync(settings.User, settings.Password);
+            await client.SendAsync(message);
+            await client.DisconnectAsync(true);
         }
     }
 

@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Pages.ConfirmEmailPage">
+    <Grid
+        ColumnDefinitions="*, 2*, *"
+        RowDefinitions="*, Auto, *">
+
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="1">
+
+            <TextBlock
+                Name="ErrorTextBlock"
+                Foreground="{DynamicResource SystemErrorTextColor}" />
+
+            <TextBox
+                Name="CodeTextBox"
+                Watermark="Код из письма" />
+
+            <Button
+                HorizontalAlignment="Right"
+                Click="ConfirmButton_OnClick"
+                Content="Ввести" />
+
+            <HyperlinkButton
+                Click="BackButton_OnClick"
+                Content="Назад" />
+        </StackPanel>
+    </Grid>
+</UserControl>

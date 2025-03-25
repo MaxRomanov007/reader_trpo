@@ -1,3 +1,5 @@
+using System;
+
 namespace App.Domain.Utils;
 
 public static class Utils
@@ -16,5 +18,18 @@ public static class Utils
         catch {
             return false;
         }
+    }
+    
+    public static string GenerateRandomDigits(int length)
+    {
+        var random = new Random();
+        var result = string.Empty;
+    
+        for (int i = 0; i < length; i++)
+        {
+            result += random.Next(0, 10).ToString();
+        }
+    
+        return result;
     }
 }

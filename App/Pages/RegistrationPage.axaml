@@ -14,7 +14,13 @@
             Grid.Column="1"
             Grid.Row="1">
 
-            <TextBlock Name="ErrorTextBlock" Foreground="{DynamicResource SystemErrorTextColor}" />
+            <TextBlock
+                Name="MessageTextBlock"
+                HorizontalAlignment="Center"
+                Foreground="{DynamicResource SystemAccentColor}" />
+            <TextBlock
+                Name="ErrorTextBlock"
+                Foreground="{DynamicResource SystemErrorTextColor}" />
 
             <TextBox
                 Name="EmailTextBox"

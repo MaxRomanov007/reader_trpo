@@ -7,12 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Email Sender added">
+      <change afterPath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/ConfirmEmailPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +104,7 @@
       <updated>1742833543053</updated>
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
-      <workItem from="1742921351313" duration="2149000" />
+      <workItem from="1742921351313" duration="5415000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -141,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742921108469</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Email Sender added">
+      <option name="closed" value="true" />
+      <created>1742923538793</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742923538793</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +169,7 @@
     <MESSAGE value="pages" />
     <MESSAGE value="Authorization page" />
     <MESSAGE value="RegistrationPage added" />
-    <option name="LAST_COMMIT_MESSAGE" value="RegistrationPage added" />
+    <MESSAGE value="Email Sender added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Email Sender added" />
   </component>
 </project>

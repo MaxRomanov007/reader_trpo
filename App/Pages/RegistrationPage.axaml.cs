@@ -9,26 +9,36 @@ using BookService;
 
 namespace App.Pages;
 
-public partial class RegistrationPage : UserControl
+public partial class RegistrationPage : UserControl, IMessageShower
 {
-    private Credentials _Credentials = new();
+    private readonly Credentials _credentials = new();
     public RegistrationPage()
     {
         InitializeComponent();
-        DataContext = _Credentials;
+        DataContext = _credentials;
     }
 
-    private void RegistrationButton_OnClick(object? sender, RoutedEventArgs e)
+    public void ShowMessage(string message)
     {
-        if (_Credentials.Email == null || 
-            _Credentials.Password == null ||
-            _Credentials.RepeatPassword == null)
+        MessageTextBlock.ShowTemporaryText(message);
+    }
+
+    private async void RegistrationButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_credentials.Email == null || 
+            _credentials.Password == null ||
+            _credentials.RepeatPassword == null)
         {
             ErrorTextBlock.ShowTemporaryText("Введите данные");
             return;
         }
 
-        var result = Users.Register(_Credentials.Email, _Credentials.Password);
+        if (!await ConfirmEmailPage.Check(_credentials.Email, this, this))
+        {
+            return;
+        }
+
+        var result = await Users.Register(_credentials.Email, _credentials.Password);
         if (result != string.Empty)
         {
             ErrorTextBlock.ShowTemporaryText(result);

@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace App.Domain.Utils;
 
 using System;
@@ -7,13 +9,17 @@ using DotNetEnv;
 
 public static class EmailSender
 {
-    private static readonly Lazy<EmailSettings> _settings;
+    private static readonly Lazy<EmailSettings> Settings;
 
     static EmailSender()
     {
-        _settings = new Lazy<EmailSettings>(() =>
+        Settings = new Lazy<EmailSettings>(() =>
         {
-            Env.Load();
+            string envPath = Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty, 
+                ".env"
+            );
+            Env.Load(envPath);
             
             return new EmailSettings
             {
@@ -28,15 +34,15 @@ public static class EmailSender
         });
     }
 
-    public static void Send(string toEmail, string toName, string subject, string text, bool isHtml = false)
+    public static async void SendAsync(string toEmail, string subject, string text, bool isHtml = false)
     {
         try
         {
-            var settings = _settings.Value;
+            var settings = Settings.Value;
             var message = new MimeMessage();
             
             message.From.Add(new MailboxAddress(settings.FromName, settings.FromEmail));
-            message.To.Add(new MailboxAddress(toName, toEmail));
+            message.To.Add(new MailboxAddress(string.Empty, toEmail));
             message.Subject = subject;
 
             message.Body = isHtml 
@@ -45,10 +51,10 @@ public static class EmailSender
 
             using (var client = new SmtpClient())
             {
-                client.Connect(settings.Host, settings.Port, settings.UseSsl);
-                client.Authenticate(settings.User, settings.Password);
-                client.Send(message);
-                client.Disconnect(true);
+                await client.ConnectAsync(settings.Host, settings.Port, settings.UseSsl);
+                await client.AuthenticateAsync(settings.User, settings.Password);
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
             }
 
             Console.WriteLine("Письмо отправлено!");
@@ -61,12 +67,12 @@ public static class EmailSender
 
     private class EmailSettings
     {
-        public string Host { get; init; }
+        public string Host { get; init; } = string.Empty;
         public int Port { get; init; }
-        public string User { get; init; }
-        public string Password { get; init; }
+        public string User { get; init; } = string.Empty;
+        public string Password { get; init; } = string.Empty;
         public bool UseSsl { get; init; }
-        public string FromName { get; init; }
-        public string FromEmail { get; init; }
+        public string FromName { get; init; } = string.Empty;
+        public string FromEmail { get; init; } = string.Empty;
     }
 }

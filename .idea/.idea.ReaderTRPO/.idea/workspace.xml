@@ -7,18 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Authorization page">
-      <change afterPath="$PROJECT_DIR$/App/Domain/Extensions/TextBlockExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/RegistrationPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Models/Credentials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/Credentials.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1742833543053</updated>
       <workItem from="1742833544397" duration="1080000" />
-      <workItem from="1742903555334" duration="16055000" />
+      <workItem from="1742903555334" duration="16292000" />
+      <workItem from="1742921351313" duration="2149000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -139,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742913849008</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="RegistrationPage added">
+      <option name="closed" value="true" />
+      <created>1742921108469</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742921108469</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +155,7 @@
     <MESSAGE value="init books service with db scaffold" />
     <MESSAGE value="pages" />
     <MESSAGE value="Authorization page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Authorization page" />
+    <MESSAGE value="RegistrationPage added" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegistrationPage added" />
   </component>
 </project>

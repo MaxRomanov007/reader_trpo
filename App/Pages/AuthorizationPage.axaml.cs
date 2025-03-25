@@ -2,6 +2,7 @@ using System;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
+using App.Domain.Utils;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;

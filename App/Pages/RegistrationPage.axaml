@@ -2,10 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:cred="clr-namespace:App.Domain.Models"
              x:DataType="cred:Credentials"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="App.Pages.AuthorizationPage">
+             x:Class="App.Pages.RegistrationPage">
     <Grid
         ColumnDefinitions="*, 2*, *"
         RowDefinitions="*, Auto, *">
@@ -14,13 +14,7 @@
             Grid.Column="1"
             Grid.Row="1">
 
-            <TextBlock
-                Name="MessageTextBlock"
-                HorizontalAlignment="Center"
-                Foreground="{DynamicResource SystemAccentColor}" />
-            <TextBlock
-                Name="ErrorTextBlock"
-                Foreground="{DynamicResource SystemErrorTextColor}" />
+            <TextBlock Name="ErrorTextBlock" Foreground="{DynamicResource SystemErrorTextColor}" />
 
             <TextBox
                 Name="EmailTextBox"
@@ -31,23 +25,22 @@
                 Watermark="Пароль"
                 PasswordChar="*"
                 Text="{Binding Password, UpdateSourceTrigger=LostFocus}" />
+            <TextBox
+                Name="RepeatPasswordTextBox"
+                Watermark="Повторите пароль"
+                PasswordChar="*"
+                Text="{Binding RepeatPassword, UpdateSourceTrigger=LostFocus}" />
 
             <Button
                 HorizontalAlignment="Right"
                 IsEnabled="{Binding !HasErrors}"
-                Click="AuthorizationButton_OnClick"
-                Content="Войти" />
+                Click="RegistrationButton_OnClick"
+                Content="Зарегистрироваться" />
 
-            <DockPanel>
-                <HyperlinkButton
-                    DockPanel.Dock="Right"
-                    Content="Забыли пароль?" />
-
-                <HyperlinkButton
-                    DockPanel.Dock="Left"
-                    Click="ToRegistrationButton_OnClick"
-                    Content="Регистрация" />
-            </DockPanel>
+            <HyperlinkButton
+                DockPanel.Dock="Right"
+                Click="BackButton_OnClick"
+                Content="Назад" />
         </StackPanel>
     </Grid>
 </UserControl>

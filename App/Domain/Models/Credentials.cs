@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace App.Domain.Models;
 
@@ -9,6 +10,7 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
 {
     private string? _email;
     private string? _password;
+    private string? _repeatPassword;
     private readonly Dictionary<string, List<string>> _errors = new();
 
     public event PropertyChangedEventHandler? PropertyChanged;
@@ -22,6 +24,7 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
             _email = value;
             OnPropertyChanged();
             ValidateEmail();
+            OnPropertyChanged(nameof(HasErrors));
         }
     }
 
@@ -33,10 +36,23 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
             _password = value;
             OnPropertyChanged();
             ValidatePassword();
+            OnPropertyChanged(nameof(HasErrors));
         }
     }
 
-    public bool HasErrors => _errors.Count > 0;
+    public string? RepeatPassword
+    {
+        get => _repeatPassword;
+        set
+        {
+            _repeatPassword = value;
+            OnPropertyChanged();
+            ValidateRepeatPassword();
+            OnPropertyChanged(nameof(HasErrors));
+        }
+    }
+
+    public bool HasErrors => _errors.Any(kv => kv.Value.Count > 0);
 
     public IEnumerable GetErrors(string? propertyName)
     {
@@ -74,6 +90,16 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
         }
     }
 
+    private void ValidateRepeatPassword()
+    {
+        ClearErrors(nameof(RepeatPassword));
+
+        if (RepeatPassword != Password)
+        {
+            AddError(nameof(RepeatPassword), "Пароли не совпадают");
+        }
+    }
+
     private void AddError(string propertyName, string errorMessage)
     {
         if (!_errors.ContainsKey(propertyName))
@@ -97,7 +123,8 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     protected virtual void OnPropertyChanged(
-        [System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
+        [System.Runtime.CompilerServices.CallerMemberName]
+        string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

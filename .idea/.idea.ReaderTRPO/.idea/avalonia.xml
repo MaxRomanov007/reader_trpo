@@ -6,6 +6,7 @@
         <entry key="App/App.axaml" value="App/App.csproj" />
         <entry key="App/MainWindow.axaml" value="App/App.csproj" />
         <entry key="App/Pages/AuthorizationPage.axaml" value="App/App.csproj" />
+        <entry key="App/Pages/RegistrationPage.axaml" value="App/App.csproj" />
       </map>
     </option>
   </component>

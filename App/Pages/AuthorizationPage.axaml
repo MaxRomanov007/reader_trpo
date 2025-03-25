@@ -2,7 +2,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cred="clr-namespace:App.Domain.Models"
+             x:DataType="cred:Credentials"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="App.Pages.AuthorizationPage">
-    Welcome to Avalonia! (That's a page)
+    <Grid
+        ColumnDefinitions="*, 2*, *"
+        RowDefinitions="*, Auto, *">
+
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="1">
+            
+            <TextBlock Name="ErrorTextBlock" Foreground="{DynamicResource SystemErrorTextColor}"/>
+
+            <TextBox
+                Name="EmailTextBox"
+                Watermark="Email"
+                Text="{Binding Email, UpdateSourceTrigger=LostFocus}" />
+            <TextBox
+                Name="PasswordTextBox"
+                Watermark="Пароль"
+                PasswordChar="*"
+                Text="{Binding Password, UpdateSourceTrigger=LostFocus}" />
+
+            <Button
+                Click="AuthorizationButton_OnClick"
+                Content="Войти" />
+        </StackPanel>
+    </Grid>
 </UserControl>

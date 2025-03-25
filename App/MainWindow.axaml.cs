@@ -1,5 +1,5 @@
+using App.Domain.Static;
 using App.Pages;
-using App.Static;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 

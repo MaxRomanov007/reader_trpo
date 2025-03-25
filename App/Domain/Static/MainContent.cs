@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace App.Static;
+namespace App.Domain.Static;
 
 public static class MainContent
 {

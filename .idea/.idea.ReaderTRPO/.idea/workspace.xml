@@ -7,13 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Static/MainContent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="pages">
+      <change afterPath="$PROJECT_DIR$/App/Domain/Models/Credentials.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Static/MainContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Static/MainContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/BookService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/BookService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/BookStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/BookStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Genre.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/OrderBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderBook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/OrderStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/models/UserRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/UserRole.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.App.executor": "Run",
+    ".NET Project.App.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -99,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742833543053</updated>
       <workItem from="1742833544397" duration="1080000" />
-      <workItem from="1742903555334" duration="4106000" />
+      <workItem from="1742903555334" duration="10033000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -117,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742834183353</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pages">
+      <option name="closed" value="true" />
+      <created>1742907718420</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907718420</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +151,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="init books service with db scaffold" />
-    <option name="LAST_COMMIT_MESSAGE" value="init books service with db scaffold" />
+    <MESSAGE value="pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="pages" />
   </component>
 </project>

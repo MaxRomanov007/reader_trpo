@@ -2,9 +2,11 @@ using System;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
+using App.Pages.User;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using BookService;
+using BookService.Database.models;
 using BookService.Utils;
 
 namespace App.Pages.Authorization;
@@ -12,9 +14,12 @@ namespace App.Pages.Authorization;
 public partial class AuthorizationPage : UserControl
 {
     private readonly Credentials _credentials = new();
+
     public AuthorizationPage()
     {
         InitializeComponent();
+        _credentials.Email = "maxromanov4232@gmail.com";
+        _credentials.Password = "12345678";
         DataContext = _credentials;
     }
 
@@ -33,8 +38,17 @@ public partial class AuthorizationPage : UserControl
             return;
         }
 
-        var result = await Users.Authorize(_credentials.Email, _credentials.Password);
-        MessageTextBlock.ShowTemporaryText(result);
+        var user = await Users.Authorize(_credentials.Email, _credentials.Password);
+        if (user is null)
+        {
+            ErrorTextBlock.ShowTemporaryText("Неверный логин или пароль");
+            return;
+        }
+        if (user.Role.Name == UserRole.User)
+        {
+            Session.UserId = user.Id;
+            MainContent.NavigateTo(new UserLayout());
+        }
     }
 
     private void ToRegistrationButton_OnClick(object? sender, RoutedEventArgs e)

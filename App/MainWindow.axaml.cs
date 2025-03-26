@@ -1,14 +1,12 @@
 using App.Domain.Static;
-using App.Pages;
+using App.Pages.Authorization;
+using App.Pages.User;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
-using AuthorizationPage = App.Pages.Authorization.AuthorizationPage;
 
 namespace App;
 
 public partial class MainWindow : Window
 {
-    
     public MainWindow()
     {
         InitializeComponent();

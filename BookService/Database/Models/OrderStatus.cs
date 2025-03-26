@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BookService.Database.models;
+﻿namespace BookService.Database.models;
 
 public partial class OrderStatus
 {
@@ -10,4 +7,8 @@ public partial class OrderStatus
     public string Name { get; set; } = null!;
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    public const string InProgress = "in_progress";
+    public const string Completed = "completed";
+    public const string Basket = "basket";
 }

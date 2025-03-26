@@ -11,7 +11,7 @@ public static class Users
     private const string UserAlreadyExistsError = "Пользователь с таким email уже существует";
     private const string UserNotFoundError = "Пользователь с таким email не найден";
 
-    public static async Task<string> Authorize(string? email, string? password)
+    public static async Task<User?> Authorize(string? email, string? password)
     {
         await using var context = new BooksContext();
 
@@ -19,15 +19,15 @@ public static class Users
 
         if (user == null)
         {
-            return InvalidCredentialsError;
+            return null;
         }
 
         if (!BCrypt.Net.BCrypt.Verify(password, Encoding.UTF8.GetString(user.Password)))
         {
-            return InvalidCredentialsError;
+            return null;
         }
 
-        return user.Role.Name;
+        return user;
     }
 
     public static async Task<string> Register(string? email, string? password)

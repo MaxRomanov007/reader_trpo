@@ -80,7 +80,7 @@ CREATE TABLE order_statuses (
 	CONSTRAINT UQ_order_status_name UNIQUE ([name])
 );
 
-INSERT INTO order_statuses VALUES ('in_progress'), ('completed');
+INSERT INTO order_statuses VALUES ('in_progress'), ('completed'), ('basket');
 
 CREATE TABLE orders (
 	id BIGINT PRIMARY KEY IDENTITY,

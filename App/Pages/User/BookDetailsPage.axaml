@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:App.Domain.Models"
+             x:DataType="models:ModifiedBook"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Pages.User.BookDetailsPage">
+    <ScrollViewer>
+        <WrapPanel HorizontalAlignment="Center">
+            <Viewbox Stretch="Uniform" Height="400" MaxWidth="480">
+                <Image Source="{Binding Image}" />
+            </Viewbox>
+
+            <StackPanel MaxWidth="480" MinWidth="300" Margin="10 0 0 0">
+                <WrapPanel>
+                    <TextBlock Classes="h1" Text="{Binding Standard.Name}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Classes="h1" Text="(" />
+                        <TextBlock Classes="h1" Text="{Binding Standard.Year}" />
+                        <TextBlock Classes="h1" Text=")" />
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Classes="h2" Text="Автор: " />
+                    <TextBlock Classes="h2" Text="{Binding Standard.Author.Surname}" />
+                    <TextBlock Classes="h2" Text="{Binding Standard.Author.Name}" />
+                    <TextBlock Classes="h2" Text="{Binding Standard.Author.Patronymic}" />
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Classes="h2" Text="Жанр: " />
+                    <TextBlock Classes="h2" Text="{Binding Standard.Genre.Name}" />
+                </WrapPanel>
+
+                <TextBlock Text="{Binding Standard.Description}" />
+
+                <Button
+                    Width="160"
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    IsVisible="{Binding !IsInBasket}" 
+                    Click="Button_OnClick"
+                    Content="Добавить в корзину"/>
+                <NumericUpDown
+                    Width="160"
+                    HorizontalAlignment="Center"
+                    Minimum="0"
+                    Increment="1"
+                    Maximum="{Binding Standard.Count}"
+                    Value="{Binding InBasketCount}"
+                    IsVisible="{Binding IsInBasket}" 
+                    ValueChanged="NumericUpDown_OnValueChanged"/>
+            </StackPanel>
+        </WrapPanel>
+    </ScrollViewer>
+</UserControl>

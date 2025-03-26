@@ -7,14 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button">
-      <change afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookService/Utils/Images.cs" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Books service created with GetAll Method">
+      <change afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Domain/Static/Session.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Domain/Static/UserContent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/App/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/BookService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/BookService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mssqlDB.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +53,15 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/68c7e19496df80819410fc6de1682a194aad33d3/src/EFCore.Relational/Extensions/RelationalPropertyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bb8dc38029c64c67b42c74519e21f91c9400/da/6ed2c421/Env.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/11af8f98c443d1a15dafaafbe21ee24e91ec83bccda0db8db8d85f9782f92ead/Interactive.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/314af8a5ba96d3b6aeaad61d17179d9662f828477067bba9a4eb876bedef/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f43b1a355af5a0194e830361c15f4b3bb5cfca5c58db15796ccb7c1e1bdf339/MailboxAddress.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -60,7 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.App.executor": "Debug",
+    ".NET Project.App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -111,7 +128,7 @@
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
       <workItem from="1742921351313" duration="10529000" />
-      <workItem from="1742963150848" duration="8706000" />
+      <workItem from="1742963150848" duration="29120000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -201,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742972824780</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Books service created with GetAll Method">
+      <option name="closed" value="true" />
+      <created>1742974927977</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742974927977</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +247,8 @@
     <MESSAGE value="some refactoring" />
     <MESSAGE value="database create script" />
     <MESSAGE value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
-    <option name="LAST_COMMIT_MESSAGE" value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
+    <MESSAGE value="Books service created with GetAll Method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Books service created with GetAll Method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,19 +258,6 @@
           <line>17</line>
           <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'" />
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs</url>
-          <line>42</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\Authorization\AuthorizationPage.axaml.cs" containingFunctionPresentation="Method 'ToRegistrationButton_OnClick'">
-            <startOffsets>
-              <option value="1181" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1228" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

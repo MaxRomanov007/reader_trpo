@@ -7,18 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BookService/Database/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button">
+      <change afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookService/Utils/Images.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/App/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/BookService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/BookService.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.App.executor": "Run",
+    ".NET Project.App.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -115,7 +111,7 @@
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
       <workItem from="1742921351313" duration="10529000" />
-      <workItem from="1742963150848" duration="6665000" />
+      <workItem from="1742963150848" duration="8706000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -197,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742933243228</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button">
+      <option name="closed" value="true" />
+      <created>1742972824780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742972824780</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +221,8 @@
     <MESSAGE value="Lost Password algorithm added" />
     <MESSAGE value="some refactoring" />
     <MESSAGE value="database create script" />
-    <option name="LAST_COMMIT_MESSAGE" value="database create script" />
+    <MESSAGE value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
+    <option name="LAST_COMMIT_MESSAGE" value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,6 +232,19 @@
           <line>17</line>
           <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'" />
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs</url>
+          <line>42</line>
+          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\Authorization\AuthorizationPage.axaml.cs" containingFunctionPresentation="Method 'ToRegistrationButton_OnClick'">
+            <startOffsets>
+              <option value="1181" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1228" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

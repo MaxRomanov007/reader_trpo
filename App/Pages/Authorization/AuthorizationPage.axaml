@@ -41,7 +41,7 @@
             <DockPanel>
                 <HyperlinkButton
                     DockPanel.Dock="Right"
-                    Click="Button_OnClick"
+                    Click="LostPasswordButton_OnClick"
                     Content="Забыли пароль?" />
 
                 <HyperlinkButton

@@ -7,9 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="some refactoring">
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BookService/Database/DbInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +48,9 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bb8dc38029c64c67b42c74519e21f91c9400/da/6ed2c421/Env.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/314af8a5ba96d3b6aeaad61d17179d9662f828477067bba9a4eb876bedef/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f43b1a355af5a0194e830361c15f4b3bb5cfca5c58db15796ccb7c1e1bdf339/MailboxAddress.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -61,7 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,7 +114,8 @@
       <updated>1742833543053</updated>
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
-      <workItem from="1742921351313" duration="10416000" />
+      <workItem from="1742921351313" duration="10529000" />
+      <workItem from="1742963150848" duration="6665000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -176,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742932830820</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="database create script">
+      <option name="closed" value="true" />
+      <created>1742933243228</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742933243228</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +216,8 @@
     <MESSAGE value="Confirm Password Page added" />
     <MESSAGE value="Lost Password algorithm added" />
     <MESSAGE value="some refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="some refactoring" />
+    <MESSAGE value="database create script" />
+    <option name="LAST_COMMIT_MESSAGE" value="database create script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -203,14 +225,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml.cs</url>
           <line>17</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'">
-            <startOffsets>
-              <option value="404" />
-            </startOffsets>
-            <endOffsets>
-              <option value="431" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

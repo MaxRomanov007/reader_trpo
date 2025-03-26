@@ -35,7 +35,7 @@ public partial class ConfirmEmailPage : UserControl
         var code = Utils.GenerateRandomDigits(CodeLength);
         try
         {
-            EmailSender.SendAsync(email, "Проверочный код", $"Ваш проверочный код: {code}");
+            await EmailSender.SendAsync(email, "Проверочный код", $"Ваш проверочный код: {code}");
         }
         catch
         {

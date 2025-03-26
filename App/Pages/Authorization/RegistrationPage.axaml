@@ -38,6 +38,7 @@
                 Text="{Binding RepeatPassword, UpdateSourceTrigger=LostFocus}" />
 
             <Button
+                Name="RegisterButton"
                 HorizontalAlignment="Right"
                 IsEnabled="{Binding !HasErrors}"
                 Click="RegistrationButton_OnClick"

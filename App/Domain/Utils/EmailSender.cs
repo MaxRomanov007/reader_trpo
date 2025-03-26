@@ -1,11 +1,10 @@
-using System.IO;
-
-namespace App.Domain.Utils;
-
 using System;
+using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MimeKit;
 using DotNetEnv;
+
+namespace App.Domain.Utils;
 
 public static class EmailSender
 {
@@ -14,14 +13,7 @@ public static class EmailSender
     static EmailSender()
     {
         Settings = new Lazy<EmailSettings>(() =>
-        {
-            string envPath = Path.Combine(
-                Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty,
-                ".env"
-            );
-            Env.Load(envPath);
-
-            return new EmailSettings
+            new EmailSettings
             {
                 Host = Env.GetString("SMTP_HOST"),
                 Port = Env.GetInt("SMTP_PORT"),
@@ -30,11 +22,11 @@ public static class EmailSender
                 UseSsl = Env.GetBool("SMTP_USE_SSL"),
                 FromName = Env.GetString("FROM_NAME"),
                 FromEmail = Env.GetString("FROM_EMAIL")
-            };
-        });
+            }
+        );
     }
 
-    public static async void SendAsync(string? toEmail, string subject, string text, bool isHtml = false)
+    public static async Task SendAsync(string? toEmail, string subject, string text, bool isHtml = false)
     {
         var settings = Settings.Value;
         var message = new MimeMessage();

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
@@ -10,6 +11,7 @@ namespace App.Pages.Authorization;
 public partial class RegistrationPage : UserControl
 {
     private readonly Credentials _credentials = new();
+
     public RegistrationPage()
     {
         InitializeComponent();
@@ -18,15 +20,28 @@ public partial class RegistrationPage : UserControl
 
     private async void RegistrationButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (_credentials.Email == null || 
+        if (_credentials.Email == null ||
             _credentials.Password == null ||
             _credentials.RepeatPassword == null)
         {
-            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите данные");
+            ErrorTextBlock.ShowTemporaryText("Введите данные");
             return;
         }
 
-        if (!await Authorization.ConfirmEmailPage.Check(_credentials.Email, this))
+        RegisterButton.IsEnabled = false;
+        await Register();
+        RegisterButton.IsEnabled = true;
+    }
+
+    private async Task Register()
+    {
+        if (await Users.IsEmailExists(_credentials.Email))
+        {
+            ErrorTextBlock.ShowTemporaryText("Пользователь с таким email уже существует");
+            return;
+        }
+
+        if (!await ConfirmEmailPage.Check(_credentials.Email, this))
         {
             return;
         }
@@ -34,11 +49,11 @@ public partial class RegistrationPage : UserControl
         var result = await Users.Register(_credentials.Email, _credentials.Password);
         if (result != string.Empty)
         {
-            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, result);
+            ErrorTextBlock.ShowTemporaryText(result);
             return;
         }
-        
-        MainContent.NavigateTo(new Authorization.AuthorizationPage("Вы успешно зарегистрированы"));
+
+        MainContent.NavigateTo(new AuthorizationPage("Вы успешно зарегистрированы"));
     }
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)

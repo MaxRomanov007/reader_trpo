@@ -1,4 +1,4 @@
-using System;
+using System.Threading.Tasks;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
@@ -11,7 +11,7 @@ namespace App.Pages.Authorization;
 public partial class LostPasswordPage : UserControl
 {
     private readonly Credentials _credentials = new();
-    
+
     public LostPasswordPage()
     {
         InitializeComponent();
@@ -20,31 +20,36 @@ public partial class LostPasswordPage : UserControl
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new Authorization.AuthorizationPage());
+        MainContent.NavigateTo(new AuthorizationPage());
     }
 
     private async void FindButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (_credentials.Email == null)
+        if (_credentials.Email is null)
         {
-            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Введите email");
+            ErrorTextBlock.ShowTemporaryText("Введите email");
             return;
         }
+        
+        FindButton.IsEnabled = false;
+        await ChangePassword();
+        FindButton.IsEnabled = true;
+    }
 
+    private async Task ChangePassword()
+    {
         if (!await Users.IsEmailExists(_credentials.Email))
         {
-            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Пользователя с таким email не существует");
+            ErrorTextBlock.ShowTemporaryText("Пользователя с таким email не существует");
             return;
         }
 
-        if (!await Authorization.ConfirmEmailPage.Check(_credentials.Email, this))
+        if (!await ConfirmEmailPage.Check(_credentials.Email, this))
         {
-            TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, "Почта не подтверждена");
+            ErrorTextBlock.ShowTemporaryText("Почта не подтверждена");
             return;
         }
-        
-        Console.WriteLine("hello");
-        
+
         MainContent.NavigateTo(new NewPasswordPage(_credentials.Email));
     }
 }

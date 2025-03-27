@@ -37,6 +37,7 @@ public partial class AuthorizationPage : UserControl
             return;
         }
 
+        EnterButton.IsEnabled = false;
         var user = await Users.Authorize(_credentials.Email, _credentials.Password);
         if (user is null)
         {
@@ -48,6 +49,7 @@ public partial class AuthorizationPage : UserControl
             Session.UserId = user.Id;
             MainContent.NavigateTo(new UserLayout());
         }
+        EnterButton.IsEnabled = true;
     }
 
     private void ToRegistrationButton_OnClick(object? sender, RoutedEventArgs e)

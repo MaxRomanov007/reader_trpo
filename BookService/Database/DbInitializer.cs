@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace BookService.Database;
 
 public static class DbInitializer
@@ -21,6 +23,7 @@ public static class DbInitializer
                 await using var context = new BooksContext();
 
                 _ = await context.Database.CanConnectAsync();
+                _ = await context.Users.AnyAsync();
 
                 lock (Lock)
                 {

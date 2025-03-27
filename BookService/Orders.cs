@@ -174,15 +174,20 @@ public static class Orders
         {
             order.Status = inProgressStatus;
         }
-        
-        order?.OrderBooks.ToList().ForEach(ob =>
+
+        if (order != null)
         {
-            ob.Book.Count -= ob.Count;
-            if (ob.Count > ob.Book.Count)
+            order.Date = DateTime.Now;
+
+            order.OrderBooks.ToList().ForEach(ob =>
             {
-                ob.Count = ob.Book.Count;
-            }
-        });
+                ob.Book.Count -= ob.Count;
+                if (ob.Count > ob.Book.Count)
+                {
+                    ob.Count = ob.Book.Count;
+                }
+            });
+        }
 
         try
         {
@@ -193,5 +198,4 @@ public static class Orders
             // ignored
         }
     }
-
 }

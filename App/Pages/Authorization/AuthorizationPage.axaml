@@ -33,6 +33,7 @@
                 Text="{Binding Password, UpdateSourceTrigger=LostFocus}" />
 
             <Button
+                Name="EnterButton"
                 HorizontalAlignment="Right"
                 IsEnabled="{Binding !HasErrors}"
                 Click="AuthorizationButton_OnClick"

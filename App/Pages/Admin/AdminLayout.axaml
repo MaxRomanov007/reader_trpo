@@ -21,6 +21,7 @@
             <HyperlinkButton
                 DockPanel.Dock="Right"
                 Margin="5"
+                Click="BooksButton_OnClick"
                 Content="Книги" />
             <HyperlinkButton
                 DockPanel.Dock="Right"

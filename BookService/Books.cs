@@ -16,6 +16,19 @@ public static class Books
 
         return books;
     }
+    
+    public static List<Book> GetAllWithRelative()
+    {
+        using var context = new BooksContext();
+
+        var books = context.Books
+            .Include(b => b.Author)
+            .Include(b => b.Genre)
+            .ToList();
+        books.ForEach(b => b.Image = Images.FullName(b.Image));
+
+        return books;
+    }
 
     public static Book? GetById(long id)
     {
@@ -33,5 +46,21 @@ public static class Books
         }
 
         return book;
+    }
+
+    public static async Task RemoveRange(List<Book> books)
+    {
+        await using var context = new BooksContext();
+        
+        context.RemoveRange(books);
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            //ignored
+        }
     }
 }

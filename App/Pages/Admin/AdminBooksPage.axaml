@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:App.Domain.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Pages.Admin.AdminBooksPage">
+    <Grid RowDefinitions="*, Auto">
+        <DataGrid
+            x:Name="BooksDataGrid"
+            AutoGenerateColumns="False"
+            CanUserResizeColumns="True"
+            IsReadOnly="True"
+            x:DataType="models:ModifiedBook">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Название"
+                    Binding="{Binding Standard.Name}"
+                    Width="Auto" />
+                <DataGridTextColumn
+                    Header="Кол-во"
+                    Binding="{Binding Standard.Count}"
+                    Width="Auto" />
+                <DataGridTextColumn
+                    Header="Год"
+                    Binding="{Binding Standard.Year}"
+                    Width="Auto" />
+                <DataGridTextColumn
+                    Header="Жанр"
+                    Binding="{Binding Standard.Genre.Name}"
+                    Width="Auto" />
+
+                <DataGridTemplateColumn Header="Автор" Width="Auto" CustomSortComparer="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:ModifiedBook">
+                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Standard.Author.Surname}" />
+                                <TextBlock Text="{Binding Standard.Author.Name}" />
+                                <TextBlock Text="{Binding Standard.Author.Patronymic}" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Изоб." Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:ModifiedBook">
+                            <Viewbox Stretch="Uniform">
+                                <Image Source="{Binding Image}" />
+                            </Viewbox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button 
+                                Click="EditButton_OnClick"
+                                Content="Изменить" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            Click="AddButton_OnClick"
+            Content="Добавить" />
+        <Button
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            Click="DeleteButton_OnClick"
+            Content="Удалить" />
+    </Grid>
+</UserControl>

@@ -1,6 +1,7 @@
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
+using App.Pages.Admin;
 using App.Pages.User;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -17,7 +18,7 @@ public partial class AuthorizationPage : UserControl
     {
         InitializeComponent();
         Session.UserId = 0;
-        _credentials.Email = "maxromanov4232@gmail.com";
+        _credentials.Email = "admin@ya.ru";
         _credentials.Password = "12345678";
         DataContext = _credentials;
     }
@@ -44,11 +45,18 @@ public partial class AuthorizationPage : UserControl
             ErrorTextBlock.ShowTemporaryText("Неверный логин или пароль");
             return;
         }
-        if (user.Role.Name == UserRole.User)
+
+        switch (user.Role.Name)
         {
-            Session.UserId = user.Id;
-            MainContent.NavigateTo(new UserLayout());
+            case UserRole.User:
+                Session.UserId = user.Id;
+                MainContent.NavigateTo(new UserLayout());
+                break;
+            case UserRole.Admin:
+                MainContent.NavigateTo(new AdminLayout());
+                break;
         }
+
         EnterButton.IsEnabled = true;
     }
 

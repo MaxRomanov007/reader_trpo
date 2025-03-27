@@ -1,4 +1,5 @@
 using App.Domain.Static;
+using App.Pages.Admin;
 using App.Pages.Authorization;
 using App.Pages.User;
 using Avalonia.Controls;
@@ -13,6 +14,6 @@ public partial class MainWindow : Window
         
         MainContent.Content = WindowContent;
         MainContent.MainWindow = this;
-        WindowContent.Content = new AuthorizationPage();
+        WindowContent.Content = new AdminBooksPage();
     }
 }

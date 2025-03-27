@@ -138,7 +138,23 @@ public static class Orders
 
         var orderBooks = order?.OrderBooks.ToList();
             
-        orderBooks?.ForEach(o => o.Book.Image = Images.FullName(o.Book.Image));
+        orderBooks?.ForEach(o =>
+        {
+            o.Book.Image = Images.FullName(o.Book.Image);
+            if (o.Count > o.Book.Count)
+            {
+                o.Count = o.Book.Count;
+            }
+        });
+        
+        try
+        {
+            context.SaveChanges();
+        }
+        catch
+        {
+            // ignored
+        }
 
         return order?.OrderBooks.ToList();
     }
@@ -149,6 +165,7 @@ public static class Orders
         
         var order = context.Orders
             .Include(o => o.Status)
+            .Include(o => o.OrderBooks).ThenInclude(ob => ob.Book)
             .FirstOrDefault(o => o.UserId == userId && o.Status.Name == OrderStatus.Basket);
 
         var inProgressStatus = context.OrderStatuses.FirstOrDefault(s => s.Name == OrderStatus.InProgress);
@@ -157,6 +174,15 @@ public static class Orders
         {
             order.Status = inProgressStatus;
         }
+        
+        order?.OrderBooks.ToList().ForEach(ob =>
+        {
+            ob.Book.Count -= ob.Count;
+            if (ob.Count > ob.Book.Count)
+            {
+                ob.Count = ob.Book.Count;
+            }
+        });
 
         try
         {

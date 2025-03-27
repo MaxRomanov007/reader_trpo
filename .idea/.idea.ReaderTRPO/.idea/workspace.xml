@@ -7,25 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Domain/Models/BasketPageProps.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Domain/Models/MessageBoxContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Static/MainContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Static/MainContent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Basket with order added">
       <change beforePath="$PROJECT_DIR$/BookService/Orders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +112,7 @@
       <workItem from="1742921351313" duration="10529000" />
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
-      <workItem from="1743080016958" duration="6864000" />
+      <workItem from="1743080016958" duration="7519000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -235,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743020579909</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Basket with order added">
+      <option name="closed" value="true" />
+      <created>1743087135836</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1743087135836</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +249,8 @@
     <MESSAGE value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
     <MESSAGE value="Books service created with GetAll Method" />
     <MESSAGE value="add to basket function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add to basket function" />
+    <MESSAGE value="Basket with order added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basket with order added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

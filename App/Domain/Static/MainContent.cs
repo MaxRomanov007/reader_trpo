@@ -4,7 +4,8 @@ namespace App.Domain.Static;
 
 public static class MainContent
 {
-    public static ContentControl Content = new ContentControl();
+    public static ContentControl Content = new();
+    public static Window MainWindow = new();
 
     public static void NavigateTo(UserControl page)
     {

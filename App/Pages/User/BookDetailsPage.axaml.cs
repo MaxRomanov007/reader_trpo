@@ -26,13 +26,13 @@ public partial class BookDetailsPage : UserControl
         DataContext = _book;
     }
 
-    private async void Button_OnClick(object? sender, RoutedEventArgs e)
+    private async void AddToBasketButton_OnClick(object? sender, RoutedEventArgs e)
     {
         await Orders.CreateOrder(Session.UserId, _book.Standard.Id);
         _book.InBasketCount = 1;
     }
 
-    private async void NumericUpDown_OnValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
+    private async void ChangeCountNumericUpDown_OnValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
     {
         if (sender is not NumericUpDown input)
         {

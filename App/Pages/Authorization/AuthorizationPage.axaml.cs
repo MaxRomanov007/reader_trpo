@@ -1,4 +1,3 @@
-using System;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
@@ -7,7 +6,6 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using BookService;
 using BookService.Database.models;
-using BookService.Utils;
 
 namespace App.Pages.Authorization;
 
@@ -18,6 +16,7 @@ public partial class AuthorizationPage : UserControl
     public AuthorizationPage()
     {
         InitializeComponent();
+        Session.UserId = 0;
         _credentials.Email = "maxromanov4232@gmail.com";
         _credentials.Password = "12345678";
         DataContext = _credentials;

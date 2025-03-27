@@ -11,13 +11,19 @@
             LastChildFill="False">
 
             <HyperlinkButton
+                DockPanel.Dock="Left"
+                Margin="5"
+                Click="MainButton_OnClick"
+                Content="Главная" />
+            <HyperlinkButton
                 DockPanel.Dock="Right"
                 Margin="5"
-                Click="CloseButton_OnClick"
+                Click="ExitButton_OnClick"
                 Content="Выйти" />
             <HyperlinkButton
                 DockPanel.Dock="Right"
                 Margin="5"
+                Click="BasketButton_OnClick"
                 Content="Корзина" />
         </DockPanel>
 

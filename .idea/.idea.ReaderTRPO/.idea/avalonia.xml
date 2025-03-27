@@ -16,9 +16,11 @@
         <entry key="App/Pages/LostPasswordPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/NewPasswordPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/RegistrationPage.axaml" value="App/App.csproj" />
+        <entry key="App/Pages/User/BasketPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/User/BookDetailsPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/User/BooksPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/User/UserLayout.axaml" value="App/App.csproj" />
+        <entry key="App/Windows/YesNoMessageBox.axaml" value="App/App.csproj" />
       </map>
     </option>
   </component>

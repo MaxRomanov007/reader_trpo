@@ -15,9 +15,18 @@ public partial class UserLayout : UserControl
         UserContentControl.Content = new BooksPage();
     }
 
-    private void CloseButton_OnClick(object? sender, RoutedEventArgs e)
+    private void ExitButton_OnClick(object? sender, RoutedEventArgs e)
     {
         MainContent.NavigateTo(new AuthorizationPage());
-        Session.UserId = 0;
+    }
+
+    private void BasketButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        UserContent.NavigateTo(new BasketPage());
+    }
+
+    private void MainButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        UserContent.NavigateTo(new BooksPage());
     }
 }

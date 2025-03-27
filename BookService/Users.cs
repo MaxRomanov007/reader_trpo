@@ -7,7 +7,6 @@ namespace BookService;
 
 public static class Users
 {
-    private const string InvalidCredentialsError = "Неверные логин или пароль";
     private const string UserAlreadyExistsError = "Пользователь с таким email уже существует";
     private const string UserNotFoundError = "Пользователь с таким email не найден";
 
@@ -22,12 +21,7 @@ public static class Users
             return null;
         }
 
-        if (!BCrypt.Net.BCrypt.Verify(password, Encoding.UTF8.GetString(user.Password)))
-        {
-            return null;
-        }
-
-        return user;
+        return !BCrypt.Net.BCrypt.Verify(password, Encoding.UTF8.GetString(user.Password)) ? null : user;
     }
 
     public static async Task<string> Register(string? email, string? password)

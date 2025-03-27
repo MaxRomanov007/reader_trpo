@@ -1,0 +1,90 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:App.Domain.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="models:BasketPageProps"
+             x:Class="App.Pages.User.BasketPage">
+    <Grid RowDefinitions="*, Auto">
+        <TextBlock
+            Grid.Row="0"
+            Classes="h1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            IsVisible="{Binding IsEmpty}"
+            Text="В корзине пусто"/>
+
+        <ScrollViewer
+            Grid.Row="0"
+            IsVisible="{Binding !IsEmpty}">
+            <ItemsControl
+                Name="BooksListItemsControl"
+                HorizontalAlignment="Center">
+
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="models:ModifiedBook">
+                        <Border
+                            Height="300"
+                            Width="200"
+                            BorderBrush="{DynamicResource SystemAccentColor}"
+                            CornerRadius="10"
+                            BorderThickness="3"
+                            Margin="3"
+                            Padding="10">
+
+                            <Grid RowDefinitions="*, Auto">
+                                <Viewbox Stretch="Uniform">
+                                    <Image Source="{Binding Image}" />
+                                </Viewbox>
+                                <StackPanel Grid.Row="1">
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Standard.Name}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="(" />
+                                            <TextBlock Text="{Binding Standard.Year}" />
+                                            <TextBlock Text=")" />
+                                        </StackPanel>
+                                    </WrapPanel>
+
+                                    <Button
+                                        Width="160"
+                                        HorizontalAlignment="Center"
+                                        HorizontalContentAlignment="Center"
+                                        IsVisible="{Binding !IsInBasket}"
+                                        Tag="{Binding Standard.Id}"
+                                        Click="AddToBasketButton_OnClick"
+                                        Content="Добавить в корзину" />
+                                    <NumericUpDown
+                                        Width="160"
+                                        HorizontalAlignment="Center"
+                                        Minimum="0"
+                                        Increment="1"
+                                        Maximum="{Binding Standard.Count}"
+                                        Value="{Binding InBasketCount}"
+                                        IsVisible="{Binding IsInBasket}"
+                                        Tag="{Binding Standard.Id}"
+                                        ValueChanged="ChangeCountNumericUpDown_OnValueChanged" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Button
+            Grid.Row="1"
+            Margin="10"
+            HorizontalAlignment="Right"
+            IsEnabled="{Binding !IsEmpty}"
+            Click="Button_OnClick"
+            Content="Оформить заказ" />
+    </Grid>
+</UserControl>

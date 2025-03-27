@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using BookService.Database;
 using BookService.Database.models;
+using BookService.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookService;
@@ -126,21 +127,45 @@ public static class Orders
         }
     }
 
-    public static async Task<List<OrderBook>?> GetUserBooksInOrder(long userId)
+    public static List<OrderBook>? GetUserBooksInOrder(long userId)
+    {
+        using var context = new BooksContext();
+        
+        var order = context.Orders
+            .Include(o => o.Status)
+            .Include(o => o.OrderBooks).ThenInclude(orderBook => orderBook.Book)
+            .FirstOrDefault(o => o.UserId == userId && o.Status.Name == OrderStatus.Basket);
+
+        var orderBooks = order?.OrderBooks.ToList();
+            
+        orderBooks?.ForEach(o => o.Book.Image = Images.FullName(o.Book.Image));
+
+        return order?.OrderBooks.ToList();
+    }
+
+    public static async Task SendOrder(long userId)
     {
         await using var context = new BooksContext();
         
-        var order = await context.Orders
+        var order = context.Orders
             .Include(o => o.Status)
-            .Include(o => o.OrderBooks)
-            .FirstOrDefaultAsync(o => o.UserId == userId && o.Status.Name == OrderStatus.Basket);
+            .FirstOrDefault(o => o.UserId == userId && o.Status.Name == OrderStatus.Basket);
 
-        if (order is null)
+        var inProgressStatus = context.OrderStatuses.FirstOrDefault(s => s.Name == OrderStatus.InProgress);
+
+        if (order is not null && inProgressStatus is not null)
         {
-            return null;
+            order.Status = inProgressStatus;
         }
 
-        return order.OrderBooks.ToList();
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            // ignored
+        }
     }
 
 }

@@ -41,7 +41,7 @@
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Center"
                     IsVisible="{Binding !IsInBasket}" 
-                    Click="Button_OnClick"
+                    Click="AddToBasketButton_OnClick"
                     Content="Добавить в корзину"/>
                 <NumericUpDown
                     Width="160"
@@ -51,7 +51,7 @@
                     Maximum="{Binding Standard.Count}"
                     Value="{Binding InBasketCount}"
                     IsVisible="{Binding IsInBasket}" 
-                    ValueChanged="NumericUpDown_OnValueChanged"/>
+                    ValueChanged="ChangeCountNumericUpDown_OnValueChanged"/>
             </StackPanel>
         </WrapPanel>
     </ScrollViewer>

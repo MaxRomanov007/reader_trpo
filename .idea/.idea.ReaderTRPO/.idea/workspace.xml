@@ -7,27 +7,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Books service created with GetAll Method">
-      <change afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Domain/Static/Session.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Domain/Static/UserContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Domain/Models/BasketPageProps.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Domain/Models/MessageBoxContent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Static/MainContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Static/MainContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Orders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mssqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mssqlDB.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/11af8f98c443d1a15dafaafbe21ee24e91ec83bccda0db8db8d85f9782f92ead/Interactive.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/314af8a5ba96d3b6aeaad61d17179d9662f828477067bba9a4eb876bedef/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f43b1a355af5a0194e830361c15f4b3bb5cfca5c58db15796ccb7c1e1bdf339/MailboxAddress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Лабы/3 курс/2 Семестр/ТРПО/Проект/ReaderTRPO/App/App.axaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -75,28 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.App.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.App.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Макс\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Макс\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Макс\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Макс\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Макс\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Макс\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -128,7 +127,9 @@
       <workItem from="1742833544397" duration="1080000" />
       <workItem from="1742903555334" duration="16292000" />
       <workItem from="1742921351313" duration="10529000" />
-      <workItem from="1742963150848" duration="29120000" />
+      <workItem from="1742963150848" duration="29288000" />
+      <workItem from="1743079922489" duration="75000" />
+      <workItem from="1743080016958" duration="6864000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -226,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742974927977</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add to basket function">
+      <option name="closed" value="true" />
+      <created>1743020579909</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1743020579909</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +257,8 @@
     <MESSAGE value="database create script" />
     <MESSAGE value="warmup for database&#10;fixed pages freeze problem&#10;added loading indicator as disabled button" />
     <MESSAGE value="Books service created with GetAll Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Books service created with GetAll Method" />
+    <MESSAGE value="add to basket function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to basket function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

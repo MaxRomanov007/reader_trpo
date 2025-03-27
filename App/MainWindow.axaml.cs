@@ -12,6 +12,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         
         MainContent.Content = WindowContent;
+        MainContent.MainWindow = this;
         WindowContent.Content = new AuthorizationPage();
     }
 }

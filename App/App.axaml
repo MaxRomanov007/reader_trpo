@@ -11,7 +11,7 @@
             <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
         </FluentTheme>
         
-        <Style Selector="TextBox, TextBlock, Button, NumericUpDown">
+        <Style Selector="TextBox, TextBlock, Button, NumericUpDown, ComboBox">
             <Setter Property="Margin" Value="3"/>
         </Style>
         

@@ -1,3 +1,4 @@
+using System;
 using App.Domain.Static;
 using App.Pages.Admin;
 using App.Pages.Authorization;
@@ -13,6 +14,6 @@ public partial class MainWindow : Window
         
         MainContent.Content = WindowContent;
         MainContent.MainWindow = this;
-        WindowContent.Content = new AuthorizationPage();
+        WindowContent.Content = new AdminLayout();
     }
 }

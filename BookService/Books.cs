@@ -48,6 +48,38 @@ public static class Books
         return book;
     }
 
+    public static async Task SaveBook(Book book)
+    {
+        await using var context = new BooksContext();
+
+        context.Books.Add(book);
+        
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            //ignored
+        }
+    }
+
+    public static async Task UpdateBook(Book book)
+    {
+        await using var context = new BooksContext();
+
+        context.Books.Update(book);
+        
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            //ignored
+        }
+    }
+
     public static async Task RemoveRange(List<Book> books)
     {
         await using var context = new BooksContext();
@@ -62,5 +94,19 @@ public static class Books
         {
             //ignored
         }
+    }
+
+    public static List<Author> GetAuthors()
+    {
+        using var context = new BooksContext();
+
+        return context.Authors.ToList();
+    }
+
+    public static List<Genre> GetGenres()
+    {
+        using var context = new BooksContext();
+
+        return context.Genres.ToList();
     }
 }

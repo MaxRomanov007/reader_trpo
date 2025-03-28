@@ -1,7 +1,10 @@
 using App.Domain.Models;
+using App.Domain.Static;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using BookService;
 
 namespace App.Pages.Admin;
 
@@ -11,8 +14,25 @@ public partial class AddEditBookPage : UserControl
     public AddEditBookPage(ModifiedBook? book)
     {
         InitializeComponent();
+        AuthorComboBox.ItemsSource = Books.GetAuthors();
+        GenreComboBox.ItemsSource = Books.GetGenres();
+        
         if (book != null)
             _book = book;
         DataContext = _book;
+    }
+
+    private async void SaveButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_book.Standard.Id == 0)
+        {
+            await Books.SaveBook(_book.Standard);
+        }
+        else
+        {
+            await Books.UpdateBook(_book.Standard);
+        }
+        
+        AdminContent.NavigateTo(new AdminBooksPage());
     }
 }

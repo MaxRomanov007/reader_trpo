@@ -11,7 +11,7 @@ public partial class NewPasswordPage : UserControl
 {
     private readonly Credentials _credentials = new();
     private string? _email;
-    
+
     public NewPasswordPage(string? email)
     {
         InitializeComponent();
@@ -21,7 +21,7 @@ public partial class NewPasswordPage : UserControl
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new Authorization.AuthorizationPage("Пароль не был изменен"));
+        MainContent.NavigateTo(new AuthorizationPage("Пароль не был изменен"));
     }
 
     private async void ChangePasswordButton_OnClick(object? sender, RoutedEventArgs e)
@@ -39,7 +39,7 @@ public partial class NewPasswordPage : UserControl
             TextBlockExtensions.ShowTemporaryText(ErrorTextBlock, result);
             return;
         }
-        
-        MainContent.NavigateTo(new Authorization.AuthorizationPage("Пароль изменен"));
+
+        MainContent.NavigateTo(new AuthorizationPage("Пароль изменен"));
     }
 }

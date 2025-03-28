@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace App.Domain.Models;
 
@@ -123,8 +124,7 @@ public class Credentials : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     protected virtual void OnPropertyChanged(
-        [System.Runtime.CompilerServices.CallerMemberName]
-        string? propertyName = null)
+        [CallerMemberName] string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

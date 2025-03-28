@@ -68,14 +68,14 @@ public static class Users
     public static async Task<string> ChangePassword(string? email, string? password)
     {
         await using var context = new BooksContext();
-        
+
         var user = await context.Users.FirstOrDefaultAsync(user => user.Email == email);
 
         if (user is null)
         {
             return UserNotFoundError;
         }
-        
+
         var passHash = Encoding.UTF8.GetBytes(
             BCrypt.Net.BCrypt.HashPassword(
                 password,
@@ -86,7 +86,7 @@ public static class Users
         user.Password = passHash;
 
         context.Users.Update(user);
-        
+
         try
         {
             await context.SaveChangesAsync();

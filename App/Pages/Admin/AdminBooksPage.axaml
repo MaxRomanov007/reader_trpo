@@ -60,7 +60,7 @@
                 <DataGridTemplateColumn Width="Auto" CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button 
+                            <Button
                                 Click="EditButton_OnClick"
                                 Content="Изменить" />
                         </DataTemplate>

@@ -18,8 +18,6 @@ public partial class AuthorizationPage : UserControl
     {
         InitializeComponent();
         Session.UserId = 0;
-        _credentials.Email = "admin@ya.ru";
-        _credentials.Password = "12345678";
         DataContext = _credentials;
     }
 

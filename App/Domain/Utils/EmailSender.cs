@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using DotNetEnv;
 using MailKit.Net.Smtp;
 using MimeKit;
-using DotNetEnv;
 
 namespace App.Domain.Utils;
 

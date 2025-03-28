@@ -1,9 +1,7 @@
 using App.Domain.Static;
 using App.Pages.Authorization;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 
 namespace App.Pages.Admin;
 

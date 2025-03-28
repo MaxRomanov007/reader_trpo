@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -33,6 +32,7 @@ public static class MyExcel
                 total += book.InOrderCount * book.Standard.Cost;
                 sb.Append($"{book.InOrderCount}x {book.Standard.Name} ({book.Standard.Year})\n");
             }
+
             sheet.Cells[i, 4].Value = sb.ToString();
             sheet.Cells[i, 5].Value = total;
 
@@ -45,13 +45,6 @@ public static class MyExcel
     public static async Task SaveExcelAsync(string path, ExcelPackage package)
     {
         var bytes = await package.GetAsByteArrayAsync();
-        try
-        {
-            await File.WriteAllBytesAsync(path, bytes);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        await File.WriteAllBytesAsync(path, bytes);
     }
 }

@@ -56,7 +56,7 @@ public partial class AdminBooksPage : UserControl
         {
             return;
         }
-        
+
         AdminContent.NavigateTo(new AddEditBookPage(button.DataContext as ModifiedBook));
     }
 }

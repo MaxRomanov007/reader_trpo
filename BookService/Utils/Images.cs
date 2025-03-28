@@ -22,11 +22,11 @@ public static class Images
         {
             return string.Empty;
         }
-        
+
         var extension = Path.GetExtension(path);
         var filename = Guid.NewGuid().ToString().Replace("-", string.Empty);
         var newPath = Path.Combine(ImagesPath, filename + extension);
-        
+
         File.Copy(path, newPath);
 
         return filename + extension;
@@ -35,12 +35,12 @@ public static class Images
     public static void RemoveImage(string filename)
     {
         var path = Path.Combine(ImagesPath, filename);
-        
+
         if (!File.Exists(path))
         {
             return;
         }
-        
+
         File.Delete(path);
     }
 }

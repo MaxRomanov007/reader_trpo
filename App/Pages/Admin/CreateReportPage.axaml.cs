@@ -1,13 +1,12 @@
 using System;
+using System.IO;
 using System.Linq;
 using App.Domain.Extensions;
 using App.Domain.Models;
 using App.Domain.Static;
 using App.Domain.Utils;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 using OfficeOpenXml;
 
@@ -48,7 +47,7 @@ public partial class CreateReportPage : UserControl
         }
 
         var orders = Orders.GetCompletedOrders(_filter.Start.DateTime, _filter.End.DateTime);
-        
+
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         using var package = new ExcelPackage();
 
@@ -63,6 +62,20 @@ public partial class CreateReportPage : UserControl
             }).ToList()
         }).ToList());
 
-        await MyExcel.SaveExcelAsync(result, package);
+        try
+        {
+            await MyExcel.SaveExcelAsync(result, package);
+
+            MessageTextBlock.ShowTemporaryText("Отчет записан");
+        }
+        catch (IOException)
+        {
+            ErrorTextBlock.ShowTemporaryText("Закройте файл перед записью");
+        }
+        catch (Exception ex)
+        {
+            ErrorTextBlock.ShowTemporaryText("Ошибка");
+            Console.WriteLine(ex);
+        }
     }
 }

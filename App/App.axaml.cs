@@ -1,12 +1,9 @@
-using System;
 using System.IO;
-using App.Domain.Utils;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using BookService.Database;
 using DotNetEnv;
-using OfficeOpenXml;
 
 namespace App;
 
@@ -15,8 +12,8 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-        
-        Env.Load(Path.GetFullPath("../../../.env"));  // path, relative to AppContext.BaseDirectory
+
+        Env.Load(Path.GetFullPath("../../../.env")); // path, relative to AppContext.BaseDirectory
         _ = DbInitializer.InitializeAsync();
     }
 

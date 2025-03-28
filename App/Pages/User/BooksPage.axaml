@@ -47,7 +47,7 @@
                                         </StackPanel>
                                     </WrapPanel>
                                 </StackPanel>
-                                
+
                                 <DockPanel Grid.Row="1" VerticalAlignment="Bottom">
                                     <StackPanel DockPanel.Dock="Bottom">
                                         <WrapPanel

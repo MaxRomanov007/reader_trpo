@@ -15,13 +15,14 @@ public interface IMessageShower
 public partial class ConfirmEmailPage : UserControl
 {
     private const int CodeLength = 6;
-    
+
     private readonly UserControl _back;
     private readonly IMessageShower? _messageShower;
     private readonly string _code;
     private readonly TaskCompletionSource<bool> _completionSource;
 
-    private ConfirmEmailPage(UserControl back, IMessageShower? messageShower, string code, TaskCompletionSource<bool> completionSource)
+    private ConfirmEmailPage(UserControl back, IMessageShower? messageShower, string code,
+        TaskCompletionSource<bool> completionSource)
     {
         InitializeComponent();
         _back = back;
@@ -29,7 +30,7 @@ public partial class ConfirmEmailPage : UserControl
         _code = code;
         _completionSource = completionSource;
     }
-    
+
     public static async Task<bool> Check(string? email, UserControl back, IMessageShower? messageShower = null)
     {
         var code = Utils.GenerateRandomDigits(CodeLength);
@@ -45,10 +46,10 @@ public partial class ConfirmEmailPage : UserControl
         }
 
         var completionSource = new TaskCompletionSource<bool>();
-    
+
         var form = new ConfirmEmailPage(back, messageShower, code, completionSource);
         MainContent.NavigateTo(form);
-    
+
         return await completionSource.Task;
     }
 

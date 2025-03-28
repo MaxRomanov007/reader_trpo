@@ -11,13 +11,13 @@
         <Style Selector="TextBlock, TextBox, NumericUpDown, ComboBox">
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-        
+
         <Style Selector="Button">
-            <Setter Property="Width" Value="90"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
         </Style>
     </UserControl.Styles>
-    
+
     <Grid RowDefinitions="*, Auto">
         <ScrollViewer Grid.Row="0">
             <Grid
@@ -148,7 +148,7 @@
                     Text="{Binding Standard.Description, UpdateSourceTrigger=LostFocus}" />
             </Grid>
         </ScrollViewer>
-        
+
         <Button
             x:Name="SaveButton"
             Grid.Row="1"
@@ -158,5 +158,5 @@
             Content="Сохранить" />
     </Grid>
 
-    
+
 </UserControl>

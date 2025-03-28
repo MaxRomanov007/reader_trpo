@@ -1,9 +1,7 @@
 using System.Threading.Tasks;
 using App.Domain.Models;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 
 namespace App.Windows;
 
@@ -28,7 +26,7 @@ public partial class YesNoMessageBox : Window
     {
         Close(false);
     }
-    
+
     public static Task<bool> Show(Window parent, string title, string message)
     {
         var msgBox = new YesNoMessageBox(title, message);

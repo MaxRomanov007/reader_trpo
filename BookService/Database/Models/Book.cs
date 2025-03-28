@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.JavaScript;
 
 namespace BookService.Database.Models;
 
@@ -19,6 +14,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     #region Properties with validation
 
     private short _year;
+
     public short Year
     {
         get => _year;
@@ -32,6 +28,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     private string _name = null!;
+
     public string Name
     {
         get => _name;
@@ -45,6 +42,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     private decimal _cost;
+
     public decimal Cost
     {
         get => _cost;
@@ -58,6 +56,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     private string _image = null!;
+
     public string Image
     {
         get => _image;
@@ -71,6 +70,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     private Author _author = null!;
+
     public virtual Author Author
     {
         get => _author;
@@ -85,6 +85,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     }
 
     private Genre _genre = null!;
+
     public virtual Genre Genre
     {
         get => _genre;

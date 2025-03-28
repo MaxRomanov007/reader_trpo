@@ -58,6 +58,6 @@ public partial class RegistrationPage : UserControl
 
     private void BackButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainContent.NavigateTo(new Authorization.AuthorizationPage());
+        MainContent.NavigateTo(new AuthorizationPage());
     }
 }

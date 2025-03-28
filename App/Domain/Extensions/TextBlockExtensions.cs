@@ -1,8 +1,8 @@
-namespace App.Domain.Extensions;
-
 using System;
-using Avalonia.Threading;
 using Avalonia.Controls;
+using Avalonia.Threading;
+
+namespace App.Domain.Extensions;
 
 public static class TextBlockExtensions
 {

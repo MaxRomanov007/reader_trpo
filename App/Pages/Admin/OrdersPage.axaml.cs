@@ -1,9 +1,7 @@
 using System.Linq;
 using App.Domain.Models;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 
 namespace App.Pages.Admin;
@@ -21,7 +19,7 @@ public partial class OrdersPage : UserControl
     {
         if (sender is not Button { DataContext: ModifiedOrder order })
         {
-            return; 
+            return;
         }
 
         await Orders.SetOrderDone(order.Order);

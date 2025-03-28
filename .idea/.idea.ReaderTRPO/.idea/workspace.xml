@@ -7,15 +7,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Export reports to excel added">
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Extensions/TextBlockExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Extensions/TextBlockExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Models/BasketPageProps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/BasketPageProps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Models/Credentials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/Credentials.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Models/ReportFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/ReportFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/MyExcel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/MyExcel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Utils/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/ConfirmEmailPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/LostPasswordPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/RegistrationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Orders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Windows/YesNoMessageBox.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/BooksContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/BooksContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/BookStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/BookStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/OrderBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderBook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/OrderStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/UserRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/UserRole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Utils/Images.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Utils/Images.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +87,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/68c7e19496df80819410fc6de1682a194aad33d3/src/EFCore.Relational/Extensions/RelationalPropertyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/68c7e19496df80819410fc6de1682a194aad33d3/src/EFCore/ChangeTracking/Internal/StateManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Private.CoreLib/src/System/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
@@ -69,7 +115,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.App.executor": "Debug",
+    ".NET Project.App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -123,7 +169,7 @@
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
       <workItem from="1743080016958" duration="44048000" />
-      <workItem from="1743181367013" duration="9029000" />
+      <workItem from="1743181367013" duration="11086000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -301,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743189654849</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="User Orders Page added">
+      <option name="closed" value="true" />
+      <created>1743191304800</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1743191304800</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,31 +398,7 @@
     <MESSAGE value="Add edit page fixed" />
     <MESSAGE value="added functionality for add edit page buttons" />
     <MESSAGE value="Export reports to excel added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Export reports to excel added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/App/Pages/Authorization/NewPasswordPage.axaml.cs</url>
-          <line>17</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs</url>
-          <line>95</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\User\BasketPage.axaml.cs" containingFunctionPresentation="Method 'Button_OnClick'">
-            <startOffsets>
-              <option value="2385" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2426" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="User Orders Page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Orders Page added" />
   </component>
 </project>

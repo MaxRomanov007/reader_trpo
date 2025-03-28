@@ -30,7 +30,7 @@ public partial class LostPasswordPage : UserControl
             ErrorTextBlock.ShowTemporaryText("Введите email");
             return;
         }
-        
+
         FindButton.IsEnabled = false;
         await ChangePassword();
         FindButton.IsEnabled = true;

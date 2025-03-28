@@ -1,7 +1,5 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 using BookService.Database.Models;
 
@@ -10,6 +8,7 @@ namespace App.Windows;
 public partial class AddGenreWindow : Window
 {
     private Genre _genre = new();
+
     public AddGenreWindow()
     {
         InitializeComponent();
@@ -24,7 +23,7 @@ public partial class AddGenreWindow : Window
             _genre.ValidateName();
             return;
         }
-        
+
         await Books.AddGenre(_genre);
         Close();
     }

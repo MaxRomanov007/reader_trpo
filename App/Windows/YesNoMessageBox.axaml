@@ -26,12 +26,12 @@
 
             <Button
                 Content="Да"
-                Width="80" 
-                Click="YesButton_OnClick"/>
+                Width="80"
+                Click="YesButton_OnClick" />
             <Button
                 Content="Нет"
-                Width="80" 
-                Click="NoButton_OnClick"/>
+                Width="80"
+                Click="NoButton_OnClick" />
         </StackPanel>
     </Grid>
 </Window>

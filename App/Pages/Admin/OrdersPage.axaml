@@ -29,12 +29,12 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate x:DataType="models:ModifiedBook">
                                     <WrapPanel>
-                                        <TextBlock Text="{Binding InOrderCount}"/>
-                                        <TextBlock Text="x "/>
-                                        <TextBlock Text="{Binding Standard.Name}"/>
-                                        <TextBlock Text="("/>
-                                        <TextBlock Text="{Binding Standard.Year}"/>
-                                        <TextBlock Text=")"/>
+                                        <TextBlock Text="{Binding InOrderCount}" />
+                                        <TextBlock Text="x " />
+                                        <TextBlock Text="{Binding Standard.Name}" />
+                                        <TextBlock Text="(" />
+                                        <TextBlock Text="{Binding Standard.Year}" />
+                                        <TextBlock Text=")" />
                                     </WrapPanel>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

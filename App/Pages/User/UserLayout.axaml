@@ -6,10 +6,10 @@
              x:Class="App.Pages.User.UserLayout">
     <UserControl.Styles>
         <Style Selector="HyperlinkButton">
-            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Margin" Value="5" />
         </Style>
     </UserControl.Styles>
-    
+
     <DockPanel>
         <DockPanel
             DockPanel.Dock="Top"

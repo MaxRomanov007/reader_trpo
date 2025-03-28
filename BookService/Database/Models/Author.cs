@@ -71,7 +71,7 @@ namespace BookService.Database.Models
         public IEnumerable GetErrors(string? propertyName)
         {
             if (string.IsNullOrEmpty(propertyName))
-                return _errors.Values.SelectMany(x => x);   
+                return _errors.Values.SelectMany(x => x);
 
             return _errors.TryGetValue(propertyName, out var errors) ? errors : Enumerable.Empty<string>();
         }

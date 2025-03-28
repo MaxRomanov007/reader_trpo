@@ -1,12 +1,9 @@
 using System;
-using System.IO;
 using App.Domain.Models;
 using App.Domain.Static;
 using App.Windows;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using BookService;
 using BookService.Database.Models;
 
@@ -15,6 +12,7 @@ namespace App.Pages.Admin;
 public partial class AddEditBookPage : UserControl
 {
     private ModifiedBook _book = new();
+
     public AddEditBookPage(ModifiedBook? book)
     {
         InitializeComponent();
@@ -22,10 +20,10 @@ public partial class AddEditBookPage : UserControl
         GenreComboBox.ItemsSource = Books.GetGenres();
 
         _book.Standard = new Book();
-        
+
         if (book != null)
             _book = book;
-        
+
         DataContext = _book;
         _book.Standard.ValidateAll();
     }
@@ -40,6 +38,7 @@ public partial class AddEditBookPage : UserControl
         {
             await Books.UpdateBook(_book.Standard);
         }
+
         AdminContent.NavigateTo(new AdminBooksPage());
     }
 

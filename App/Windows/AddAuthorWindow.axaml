@@ -13,54 +13,54 @@
         Title="AddAuthorWindow">
     <Window.Styles>
         <Style Selector="TextBlock">
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Styles>
-    
-    <Grid 
-        RowDefinitions="Auto, Auto, Auto, Auto" 
+
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, Auto"
         ColumnDefinitions="Auto, Auto"
         HorizontalAlignment="Center"
         VerticalAlignment="Center">
-        
+
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
-            Text="Фамилия"/>
+            Text="Фамилия" />
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
             Width="150"
             Watermark="Фамилия"
-            Text="{Binding Surname}"/>
-        
+            Text="{Binding Surname}" />
+
         <TextBlock
             Grid.Row="1"
             Grid.Column="0"
-            Text="Имя"/>
+            Text="Имя" />
         <TextBox
             Grid.Row="1"
             Grid.Column="1"
             Width="150"
             Watermark="Имя"
-            Text="{Binding Name}"/>
-        
+            Text="{Binding Name}" />
+
         <TextBlock
             Grid.Row="2"
             Grid.Column="0"
-            Text="Отчество"/>
+            Text="Отчество" />
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
             Width="150"
             Watermark="Отчество"
-            Text="{Binding Patronymic}"/>
-        
+            Text="{Binding Patronymic}" />
+
         <Button
             Grid.Row="3"
             Grid.Column="1"
             IsEnabled="{Binding !HasErrors}"
             Click="AddButton_OnClick"
-            Content="Добавить"/>
-    </Grid> 
+            Content="Добавить" />
+    </Grid>
 </Window>

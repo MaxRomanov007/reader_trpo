@@ -35,22 +35,22 @@
                 </WrapPanel>
 
                 <TextBlock Text="{Binding Standard.Description}" />
-                
+
                 <WrapPanel
                     Orientation="Horizontal"
                     HorizontalAlignment="Right">
 
-                    <TextBlock Text="{Binding Standard.Cost}"/>
-                    <TextBlock Text="р."/>
+                    <TextBlock Text="{Binding Standard.Cost}" />
+                    <TextBlock Text="р." />
                 </WrapPanel>
 
                 <Button
                     Width="160"
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Center"
-                    IsVisible="{Binding !IsInBasket}" 
+                    IsVisible="{Binding !IsInBasket}"
                     Click="AddToBasketButton_OnClick"
-                    Content="Добавить в корзину"/>
+                    Content="Добавить в корзину" />
                 <NumericUpDown
                     Width="160"
                     HorizontalAlignment="Center"
@@ -58,8 +58,8 @@
                     Increment="1"
                     Maximum="{Binding Standard.Count}"
                     Value="{Binding InOrderCount}"
-                    IsVisible="{Binding IsInBasket}" 
-                    ValueChanged="ChangeCountNumericUpDown_OnValueChanged"/>
+                    IsVisible="{Binding IsInBasket}"
+                    ValueChanged="ChangeCountNumericUpDown_OnValueChanged" />
             </StackPanel>
         </WrapPanel>
     </ScrollViewer>

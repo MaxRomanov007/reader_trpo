@@ -1,4 +1,3 @@
-using System.Net.Mime;
 using BookService.Database;
 using BookService.Database.Models;
 using BookService.Utils;
@@ -79,9 +78,9 @@ public static class Books
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -123,9 +122,9 @@ public static class Books
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -141,9 +140,9 @@ public static class Books
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -166,14 +165,14 @@ public static class Books
         await using var context = new BooksContext();
 
         context.Genres.Add(genre);
-        
+
         try
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -182,14 +181,14 @@ public static class Books
         await using var context = new BooksContext();
 
         context.Authors.Add(author);
-        
+
         try
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 }

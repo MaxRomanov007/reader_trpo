@@ -1,12 +1,8 @@
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using App.Domain.Models;
 using App.Domain.Static;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using Avalonia.Media.Imaging;
 using BookService;
 
@@ -33,11 +29,12 @@ public partial class BooksPage : UserControl
         {
             return;
         }
+
         if (button.Tag is not long id)
         {
             return;
         }
-        
+
         UserContent.NavigateTo(new BookDetailsPage(id));
     }
 }

@@ -20,7 +20,6 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="models:ModifiedBook">
                         <Border
-                            Height="350"
                             Width="200"
                             BorderBrush="{DynamicResource SystemAccentColor}"
                             CornerRadius="10"
@@ -28,12 +27,18 @@
                             Margin="3"
                             Padding="10">
 
-                            <Grid RowDefinitions="*, Auto">
-                                <Viewbox Stretch="Uniform">
-                                    <Image Source="{Binding Image}" />
-                                </Viewbox>
-                                <StackPanel Grid.Row="1">
-                                    <WrapPanel Orientation="Horizontal">
+                            <Grid RowDefinitions="Auto, *">
+                                <StackPanel>
+                                    <Viewbox
+                                        Stretch="Uniform"
+                                        VerticalAlignment="Top"
+                                        Width="180"
+                                        Height="180">
+
+                                        <Image Source="{Binding Image}" />
+                                    </Viewbox>
+
+                                    <WrapPanel Orientation="Horizontal" DockPanel.Dock="Top">
                                         <TextBlock Text="{Binding Standard.Name}" />
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="(" />
@@ -41,21 +46,25 @@
                                             <TextBlock Text=")" />
                                         </StackPanel>
                                     </WrapPanel>
-
-                                    <WrapPanel
-                                        Orientation="Horizontal"
-                                        HorizontalAlignment="Center">
-
-                                        <TextBlock Text="{Binding Standard.Cost}"/>
-                                        <TextBlock Text="р."/>
-                                    </WrapPanel>
-
-                                    <Button
-                                        Tag="{Binding Standard.Id}"
-                                        HorizontalAlignment="Center"
-                                        Click="Button_OnClick"
-                                        Content="Подробнее" />
                                 </StackPanel>
+                                
+                                <DockPanel Grid.Row="1" VerticalAlignment="Bottom">
+                                    <StackPanel DockPanel.Dock="Bottom">
+                                        <WrapPanel
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
+
+                                            <TextBlock Text="{Binding Standard.Cost}" />
+                                            <TextBlock Text="р." />
+                                        </WrapPanel>
+
+                                        <Button
+                                            Tag="{Binding Standard.Id}"
+                                            HorizontalAlignment="Center"
+                                            Click="Button_OnClick"
+                                            Content="Подробнее" />
+                                    </StackPanel>
+                                </DockPanel>
                             </Grid>
                         </Border>
                     </DataTemplate>

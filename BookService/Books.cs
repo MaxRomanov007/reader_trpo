@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using BookService.Database;
 using BookService.Database.Models;
 using BookService.Utils;
@@ -7,16 +8,16 @@ namespace BookService;
 
 public static class Books
 {
-    public static List<Book> GetAll()
+    public static List<Book> GetAvailableBooks()
     {
         using var context = new BooksContext();
 
-        var books = context.Books.ToList();
+        var books = context.Books.Where(b => b.Count > 0).ToList();
         books.ForEach(b => b.Image = Images.FullName(b.Image));
 
         return books;
     }
-    
+
     public static List<Book> GetAllWithRelative()
     {
         using var context = new BooksContext();
@@ -52,8 +53,28 @@ public static class Books
     {
         await using var context = new BooksContext();
 
-        context.Books.Add(book);
-        
+        var imageName = Images.SaveImage(book.Image);
+        if (imageName == string.Empty)
+        {
+            return;
+        }
+
+        context.Entry(book).State = EntityState.Detached;
+
+        var newBook = new Book
+        {
+            Image = imageName,
+            AuthorId = book.AuthorId,
+            GenreId = book.GenreId,
+            Cost = book.Cost,
+            Year = book.Year,
+            Name = book.Name,
+            Count = book.Count,
+            Description = book.Description,
+        };
+
+        context.Books.Add(newBook);
+
         try
         {
             await context.SaveChangesAsync();
@@ -68,22 +89,55 @@ public static class Books
     {
         await using var context = new BooksContext();
 
-        context.Books.Update(book);
-        
+        var oldBook = await context.Books.FirstOrDefaultAsync(b => b.Id == book.Id);
+
+        if (oldBook is null)
+        {
+            return;
+        }
+
+        var file = Path.GetFileName(book.Image);
+        if (oldBook.Image != file)
+        {
+            Images.RemoveImage(oldBook.Image);
+            var fileName = Images.SaveImage(book.Image);
+            if (fileName != string.Empty)
+            {
+                oldBook.Image = fileName;
+            }
+        }
+
+        context.Entry(book).State = EntityState.Detached;
+
+        oldBook.Image = book.Image;
+        oldBook.AuthorId = book.AuthorId;
+        oldBook.GenreId = book.GenreId;
+        oldBook.Cost = book.Cost;
+        oldBook.Year = book.Year;
+        oldBook.Name = book.Name;
+        oldBook.Count = book.Count;
+        oldBook.Description = book.Description;
+
+        oldBook.Image = Path.GetFileName(oldBook.Image);
+
+        context.Books.Update(oldBook);
+
         try
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            //ignored
+            Console.WriteLine(e);
         }
     }
 
     public static async Task RemoveRange(List<Book> books)
     {
         await using var context = new BooksContext();
-        
+
+        books.ForEach(b => { Images.RemoveImage(Path.GetFileName(b.Image)); });
+
         context.RemoveRange(books);
 
         try

@@ -14,6 +14,6 @@ public partial class MainWindow : Window
         
         MainContent.Content = WindowContent;
         MainContent.MainWindow = this;
-        WindowContent.Content = new AdminLayout();
+        WindowContent.Content = new AuthorizationPage();
     }
 }

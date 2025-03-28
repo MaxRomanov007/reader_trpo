@@ -18,7 +18,7 @@ public partial class BooksPage : UserControl
     {
         InitializeComponent();
 
-        var books = Books.GetAll();
+        var books = Books.GetAvailableBooks();
 
         BooksListItemsControl.ItemsSource = books.Select(book => new ModifiedBook
         {

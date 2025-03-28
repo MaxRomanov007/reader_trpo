@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.JavaScript;
 
 namespace BookService.Database.Models;
 
@@ -23,12 +24,10 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _year;
         set
         {
-            if (_year != value)
-            {
-                _year = value;
-                OnPropertyChanged();
-                ValidateYear();
-            }
+            if (_year == value) return;
+            _year = value;
+            OnPropertyChanged();
+            ValidateYear();
         }
     }
 
@@ -38,12 +37,10 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _name;
         set
         {
-            if (_name != value)
-            {
-                _name = value;
-                OnPropertyChanged();
-                ValidateName();
-            }
+            if (_name == value) return;
+            _name = value;
+            OnPropertyChanged();
+            ValidateName();
         }
     }
 
@@ -53,12 +50,10 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _cost;
         set
         {
-            if (_cost != value)
-            {
-                _cost = value;
-                OnPropertyChanged();
-                ValidateCost();
-            }
+            if (_cost == value) return;
+            _cost = value;
+            OnPropertyChanged();
+            ValidateCost();
         }
     }
 
@@ -68,12 +63,10 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _image;
         set
         {
-            if (_image != value)
-            {
-                _image = value;
-                OnPropertyChanged();
-                ValidateImage();
-            }
+            if (_image == value) return;
+            _image = value;
+            OnPropertyChanged();
+            ValidateImage();
         }
     }
 
@@ -83,13 +76,11 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _author;
         set
         {
-            if (_author != value)
-            {
-                _author = value;
-                AuthorId = value?.Id ?? 0;
-                OnPropertyChanged();
-                ValidateAuthor();
-            }
+            if (Equals(_author, value)) return;
+            _author = value;
+            AuthorId = value?.Id ?? 0;
+            OnPropertyChanged();
+            ValidateAuthor();
         }
     }
 
@@ -99,29 +90,49 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         get => _genre;
         set
         {
-            if (_genre != value)
-            {
-                _genre = value;
-                GenreId = value?.Id ?? 0;
-                OnPropertyChanged();
-                ValidateGenre();
-            }
+            if (Equals(_genre, value)) return;
+            _genre = value;
+            GenreId = value?.Id ?? 0;
+            OnPropertyChanged();
+            ValidateGenre();
         }
     }
 
-    // Остальные свойства без валидации остаются как были
+    private string? _description;
+
+    public virtual string? Description
+    {
+        get => _description;
+        set
+        {
+            if (_description == value) return;
+            _description = value;
+            OnPropertyChanged();
+        }
+    }
+
     public long Id { get; set; }
     public long GenreId { get; set; }
     public long AuthorId { get; set; }
     public long StatusId { get; set; }
     public int Count { get; set; }
-    public string? Description { get; set; }
     public virtual ICollection<OrderBook> OrderBooks { get; set; } = new List<OrderBook>();
     public virtual BookStatus Status { get; set; } = null!;
 
     #endregion
 
     #region Validation Methods
+
+    public void ValidateAll()
+    {
+        ValidateAuthor();
+        ValidateGenre();
+        ValidateCost();
+        ValidateImage();
+        ValidateName();
+        ValidateYear();
+        OnPropertyChanged(nameof(HasErrors));
+    }
 
     private void ValidateYear()
     {
@@ -147,7 +158,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         ClearErrors(nameof(Cost));
 
-        if (Cost <= 0)
+        if (Cost < 0)
         {
             AddError(nameof(Cost), "Цена должна быть больше нуля");
         }
@@ -157,17 +168,17 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         ClearErrors(nameof(Image));
 
-        if (string.IsNullOrWhiteSpace(Image))
+        if (string.IsNullOrWhiteSpace(_image))
         {
             AddError(nameof(Image), "Путь до файла не может быть пустым");
             return;
         }
 
-        if (!File.Exists(Image))
+        if (!File.Exists(_image))
         {
             AddError(nameof(Image), "Такого файла не существует");
         }
-        else if (!IsImageFile(Image))
+        else if (!IsImageFile(_image))
         {
             AddError(nameof(Image), "Файл должен быть изображением (jpg, png, etc.)");
         }
@@ -247,6 +258,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
     protected virtual void OnErrorsChanged(string propertyName)
     {
         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+        OnPropertyChanged(nameof(HasErrors));
     }
 
     #endregion

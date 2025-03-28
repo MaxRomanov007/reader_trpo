@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using BookService;
+using BookService.Database.Models;
 
 namespace App.Pages.Admin;
 
@@ -16,10 +17,14 @@ public partial class AddEditBookPage : UserControl
         InitializeComponent();
         AuthorComboBox.ItemsSource = Books.GetAuthors();
         GenreComboBox.ItemsSource = Books.GetGenres();
+
+        _book.Standard = new Book();
         
         if (book != null)
             _book = book;
+        
         DataContext = _book;
+        _book.Standard.ValidateAll();
     }
 
     private async void SaveButton_OnClick(object? sender, RoutedEventArgs e)
@@ -32,7 +37,6 @@ public partial class AddEditBookPage : UserControl
         {
             await Books.UpdateBook(_book.Standard);
         }
-        
         AdminContent.NavigateTo(new AdminBooksPage());
     }
 }

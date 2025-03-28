@@ -7,17 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="added cost fix">
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Genre.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Utils/Images.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Utils/Images.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +123,7 @@
       <workItem from="1742921351313" duration="10529000" />
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
-      <workItem from="1743080016958" duration="27484000" />
+      <workItem from="1743080016958" duration="38857000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -268,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743141798059</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add edit simple page">
+      <option name="closed" value="true" />
+      <created>1743154345413</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1743154345413</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +285,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
@@ -296,7 +316,8 @@
     <MESSAGE value="admin layout" />
     <MESSAGE value="AdminBooksPage, AddEditBookPage" />
     <MESSAGE value="added cost fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cost fix" />
+    <MESSAGE value="Add edit simple page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add edit simple page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

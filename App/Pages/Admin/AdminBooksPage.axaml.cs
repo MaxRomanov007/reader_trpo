@@ -21,9 +21,6 @@ public partial class AdminBooksPage : UserControl
     private void UpdateSource()
     {
         var books = Books.GetAllWithRelative();
-        books.AddRange(books);
-        books.AddRange(books);
-        books.AddRange(books);
 
         BooksDataGrid.ItemsSource = books.Select(b => new ModifiedBook
         {

@@ -4,6 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="App.Pages.User.UserLayout">
+    <UserControl.Styles>
+        <Style Selector="HyperlinkButton">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Styles>
+    
     <DockPanel>
         <DockPanel
             DockPanel.Dock="Top"
@@ -12,19 +18,20 @@
 
             <HyperlinkButton
                 DockPanel.Dock="Left"
-                Margin="5"
                 Click="MainButton_OnClick"
                 Content="Главная" />
             <HyperlinkButton
                 DockPanel.Dock="Right"
-                Margin="5"
                 Click="ExitButton_OnClick"
                 Content="Выйти" />
             <HyperlinkButton
                 DockPanel.Dock="Right"
-                Margin="5"
                 Click="BasketButton_OnClick"
                 Content="Корзина" />
+            <HyperlinkButton
+                DockPanel.Dock="Right"
+                Click="MyOrdersButton_OnClick"
+                Content="Мои заказы" />
         </DockPanel>
 
         <ContentControl Name="UserContentControl" Padding="10" />

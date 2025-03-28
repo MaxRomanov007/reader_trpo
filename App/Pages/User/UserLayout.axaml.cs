@@ -29,4 +29,9 @@ public partial class UserLayout : UserControl
     {
         UserContent.NavigateTo(new BooksPage());
     }
+
+    private void MyOrdersButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        UserContent.NavigateTo(new UserOrdersPage());
+    }
 }

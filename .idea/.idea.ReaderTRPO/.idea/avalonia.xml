@@ -26,6 +26,7 @@
         <entry key="App/Pages/User/BooksPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/User/MyOrdersPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/User/UserLayout.axaml" value="App/App.csproj" />
+        <entry key="App/Pages/User/UserOrdersPage.axaml" value="App/App.csproj" />
         <entry key="App/Windows/AddAuthorWindow.axaml" value="App/App.csproj" />
         <entry key="App/Windows/AddGenreWindow.axaml" value="App/App.csproj" />
         <entry key="App/Windows/YesNoMessageBox.axaml" value="App/App.csproj" />

@@ -63,9 +63,9 @@ public static class Orders
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -99,9 +99,9 @@ public static class Orders
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
 
         var order = await context.Orders
@@ -120,9 +120,9 @@ public static class Orders
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -150,9 +150,9 @@ public static class Orders
         {
             context.SaveChanges();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
 
         return order?.OrderBooks.ToList();
@@ -188,13 +188,21 @@ public static class Orders
             });
         }
 
+        if (order is not null)
+        {
+            foreach (var orderBook in order.OrderBooks)
+            {
+                context.Entry(orderBook).State = EntityState.Detached;
+            }
+        }
+
         try
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -225,9 +233,9 @@ public static class Orders
         {
             await context.SaveChangesAsync();
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -243,6 +251,21 @@ public static class Orders
             .Where(o => o.Status.Name == OrderStatus.Completed
                         && o.Date >= start
                         && o.Date <= end)
+            .ToList();
+
+        return orders;
+    }
+
+    public static List<Order> GetUserOrders(long userId)
+    {
+        using var context = new BooksContext();
+
+        var orders = context.Orders
+            .Include(o => o.Status)
+            .Include(o => o.User)
+            .Include(o => o.OrderBooks)
+            .ThenInclude(ob => ob.Book)
+            .Where(o => o.Status.Name != OrderStatus.Basket && o.User.Id == userId)
             .ToList();
 
         return orders;

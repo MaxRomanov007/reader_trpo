@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:App.Domain.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Pages.User.UserOrdersPage">
+    <DataGrid
+        x:Name="OrdersDataGrid"
+        AutoGenerateColumns="False"
+        CanUserResizeColumns="True"
+        IsReadOnly="True"
+        x:DataType="models:ModifiedOrder">
+
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                Header="Дата"
+                Binding="{Binding Order.Date}"
+                Width="Auto" />
+
+            <DataGridTemplateColumn Header="Список" Width="*">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="models:ModifiedOrder">
+                        <ItemsControl ItemsSource="{Binding Books}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="models:ModifiedBook">
+                                    <WrapPanel>
+                                        <TextBlock Text="{Binding InOrderCount}" />
+                                        <TextBlock Text="x " />
+                                        <TextBlock Text="{Binding Standard.Name}" />
+                                        <TextBlock Text="(" />
+                                        <TextBlock Text="{Binding Standard.Year}" />
+                                        <TextBlock Text=")" />
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+
+            <DataGridTextColumn
+                Header="Статус"
+                Binding="{Binding Order.Status.Name}"
+                Width="Auto" />
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

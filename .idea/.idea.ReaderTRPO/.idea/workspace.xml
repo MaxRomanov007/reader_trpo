@@ -7,17 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Domain/Models/ReportFilter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Domain/Utils/MyExcel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml.cs" afterDir="false" />
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="Export reports to excel added">
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/User/UserOrdersPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/App/App.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/UserLayout.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Orders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +123,7 @@
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
       <workItem from="1743080016958" duration="44048000" />
-      <workItem from="1743181367013" duration="7449000" />
+      <workItem from="1743181367013" duration="9029000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -296,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743183247415</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Export reports to excel added">
+      <option name="closed" value="true" />
+      <created>1743189654849</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1743189654849</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +343,8 @@
     <MESSAGE value="Add edit simple page" />
     <MESSAGE value="Add edit page fixed" />
     <MESSAGE value="added functionality for add edit page buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added functionality for add edit page buttons" />
+    <MESSAGE value="Export reports to excel added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Export reports to excel added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,56 +356,17 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BookService/Books.cs</url>
-          <line>101</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\BookService\Books.cs" containingFunctionPresentation="Method 'UpdateBook'">
+          <url>file://$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs</url>
+          <line>95</line>
+          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\User\BasketPage.axaml.cs" containingFunctionPresentation="Method 'Button_OnClick'">
             <startOffsets>
-              <option value="2389" />
+              <option value="2385" />
             </startOffsets>
             <endOffsets>
-              <option value="2423" />
+              <option value="2426" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/App/Domain/Utils/MyExcel.cs</url>
-          <line>24</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Domain\Utils\MyExcel.cs" containingFunctionPresentation="Method 'WriteSheet'">
-            <startOffsets>
-              <option value="670" />
-            </startOffsets>
-            <endOffsets>
-              <option value="699" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/App/Pages/Admin/CreateReportPage.axaml.cs</url>
-          <line>54</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\Admin\CreateReportPage.axaml.cs" containingFunctionPresentation="Method 'Button_OnClick'">
-            <startOffsets>
-              <option value="1411" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1464" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BookService/Orders.cs</url>
-          <line>235</line>
-          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\BookService\Orders.cs" containingFunctionPresentation="Method 'GetCompletedOrders'">
-            <startOffsets>
-              <option value="5898" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5937" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

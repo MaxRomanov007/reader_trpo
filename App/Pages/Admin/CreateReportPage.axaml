@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:App.Domain.Models"
+             x:DataType="models:ReportFilter"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Pages.Admin.CreateReportPage">
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, Auto"
+        ColumnDefinitions="Auto, Auto"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Name="ErrorTextBlock"
+            Foreground="{DynamicResource SystemErrorTextColor}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Дата начала"/>
+        <DatePicker
+            Grid.Row="1"
+            Grid.Column="1"
+            SelectedDate="{Binding Start}"/>
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Дата окончания"/>
+        <DatePicker
+            Grid.Row="2"
+            Grid.Column="1"
+            SelectedDate="{Binding End}"/>
+        
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            HorizontalAlignment="Right" 
+            Click="Button_OnClick"
+            Content="Составить"/>
+    </Grid>
+</UserControl>

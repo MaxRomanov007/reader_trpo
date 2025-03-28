@@ -8,6 +8,7 @@
         <entry key="App/Pages/Admin/AddEditBookPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/Admin/AdminBooksPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/Admin/AdminLayout.axaml" value="App/App.csproj" />
+        <entry key="App/Pages/Admin/CreateReportPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/Admin/OrdersPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/Authorization/AuthorizationPage.axaml" value="App/App.csproj" />
         <entry key="App/Pages/Authorization/ConfirmEmailPage.axaml" value="App/App.csproj" />

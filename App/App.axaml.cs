@@ -6,6 +6,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using BookService.Database;
 using DotNetEnv;
+using OfficeOpenXml;
 
 namespace App;
 

@@ -129,14 +129,14 @@ public static class Orders
     public static List<OrderBook>? GetUserBooksInOrder(long userId)
     {
         using var context = new BooksContext();
-        
+
         var order = context.Orders
             .Include(o => o.Status)
             .Include(o => o.OrderBooks).ThenInclude(orderBook => orderBook.Book)
             .FirstOrDefault(o => o.UserId == userId && o.Status.Name == OrderStatus.Basket);
 
         var orderBooks = order?.OrderBooks.ToList();
-            
+
         orderBooks?.ForEach(o =>
         {
             o.Book.Image = Images.FullName(o.Book.Image);
@@ -145,7 +145,7 @@ public static class Orders
                 o.Count = o.Book.Count;
             }
         });
-        
+
         try
         {
             context.SaveChanges();
@@ -161,7 +161,7 @@ public static class Orders
     public static async Task SendOrder(long userId)
     {
         await using var context = new BooksContext();
-        
+
         var order = context.Orders
             .Include(o => o.Status)
             .Include(o => o.OrderBooks).ThenInclude(ob => ob.Book)
@@ -220,7 +220,7 @@ public static class Orders
         order.Status = context.OrderStatuses.First(s => s.Name == OrderStatus.Completed);
 
         context.Update(order);
-        
+
         try
         {
             await context.SaveChangesAsync();
@@ -229,5 +229,22 @@ public static class Orders
         {
             // ignored
         }
+    }
+
+    public static List<Order> GetCompletedOrders(DateTime start, DateTime end)
+    {
+        using var context = new BooksContext();
+
+        var orders = context.Orders
+            .Include(o => o.Status)
+            .Include(o => o.User)
+            .Include(o => o.OrderBooks)
+            .ThenInclude(ob => ob.Book)
+            .Where(o => o.Status.Name == OrderStatus.Completed
+                        && o.Date >= start
+                        && o.Date <= end)
+            .ToList();
+
+        return orders;
     }
 }

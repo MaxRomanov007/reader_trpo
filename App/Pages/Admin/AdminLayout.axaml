@@ -13,6 +13,7 @@
             <HyperlinkButton
                 DockPanel.Dock="Left"
                 Margin="5"
+                Click="CreateReportButton_OnClick"
                 Content="Составить отчет" />
             <HyperlinkButton
                 DockPanel.Dock="Right"

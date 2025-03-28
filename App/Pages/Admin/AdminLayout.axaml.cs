@@ -31,4 +31,9 @@ public partial class AdminLayout : UserControl
     {
         AdminContent.NavigateTo(new OrdersPage());
     }
+
+    private void CreateReportButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AdminContent.NavigateTo(new CreateReportPage());
+    }
 }

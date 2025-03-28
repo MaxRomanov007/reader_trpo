@@ -61,6 +61,7 @@ CREATE TABLE books (
 	genre_id BIGINT NOT NULL,
 	author_id BIGINT NOT NULL,
 	status_id BIGINT NOT NULL DEFAULT(1),
+    cost DECIMAL(10, 2) NOT NULL DEFAULT (0),
 	[year] SMALLINT NOT NULL,
 	[name] NVARCHAR(255) NOT NULL,
 	[count] INT NOT NULL DEFAULT(0),
@@ -68,6 +69,7 @@ CREATE TABLE books (
 	[description] NVARCHAR(MAX),
 	
 	CONSTRAINT UQ_book_image UNIQUE ([image]),
+    CONSTRAINT CK_book_cost_over_or_equal_zero CHECK (cost >= 0),
 	FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE,
 	FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE,
 	FOREIGN KEY (status_id) REFERENCES book_statuses(id) ON DELETE CASCADE

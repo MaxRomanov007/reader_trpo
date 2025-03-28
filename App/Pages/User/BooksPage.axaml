@@ -13,14 +13,14 @@
 
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal"/>
+                        <WrapPanel Orientation="Horizontal" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="models:ModifiedBook">
                         <Border
-                            Height="300"
+                            Height="350"
                             Width="200"
                             BorderBrush="{DynamicResource SystemAccentColor}"
                             CornerRadius="10"
@@ -41,12 +41,20 @@
                                             <TextBlock Text=")" />
                                         </StackPanel>
                                     </WrapPanel>
-                                    
-                                    <Button 
+
+                                    <WrapPanel
+                                        Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+
+                                        <TextBlock Text="{Binding Standard.Cost}"/>
+                                        <TextBlock Text="р."/>
+                                    </WrapPanel>
+
+                                    <Button
                                         Tag="{Binding Standard.Id}"
-                                        HorizontalAlignment="Center" 
+                                        HorizontalAlignment="Center"
                                         Click="Button_OnClick"
-                                        Content="Подробнее"/>
+                                        Content="Подробнее" />
                                 </StackPanel>
                             </Grid>
                         </Border>

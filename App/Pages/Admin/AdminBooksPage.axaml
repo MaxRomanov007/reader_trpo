@@ -17,10 +17,14 @@
                 <DataGridTextColumn
                     Header="Название"
                     Binding="{Binding Standard.Name}"
-                    Width="Auto" />
+                    Width="*" />
                 <DataGridTextColumn
                     Header="Кол-во"
                     Binding="{Binding Standard.Count}"
+                    Width="Auto" />
+                <DataGridTextColumn
+                    Header="Цена"
+                    Binding="{Binding Standard.Cost}"
                     Width="Auto" />
                 <DataGridTextColumn
                     Header="Год"
@@ -31,7 +35,7 @@
                     Binding="{Binding Standard.Genre.Name}"
                     Width="Auto" />
 
-                <DataGridTemplateColumn Header="Автор" Width="Auto" CustomSortComparer="">
+                <DataGridTemplateColumn Header="Автор" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="models:ModifiedBook">
                             <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">

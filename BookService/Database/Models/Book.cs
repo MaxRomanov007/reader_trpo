@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookService.Database.models;
+namespace BookService.Database.Models;
 
 public partial class Book
 {
@@ -12,6 +12,8 @@ public partial class Book
     public long AuthorId { get; set; }
 
     public long StatusId { get; set; }
+
+    public decimal Cost { get; set; }
 
     public short Year { get; set; }
 

@@ -1,4 +1,7 @@
-﻿namespace BookService.Database.models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace BookService.Database.Models;
 
 public partial class UserRole
 {

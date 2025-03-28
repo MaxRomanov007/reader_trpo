@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookService.Database.models;
+namespace BookService.Database.Models;
 
 public partial class Order
 {
@@ -9,7 +9,7 @@ public partial class Order
 
     public long UserId { get; set; }
 
-    public long? StatusId { get; set; }
+    public long StatusId { get; set; }
 
     public DateTime Date { get; set; }
 

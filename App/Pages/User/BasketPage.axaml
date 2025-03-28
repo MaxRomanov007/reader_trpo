@@ -31,7 +31,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="models:ModifiedBook">
                         <Border
-                            Height="300"
+                            Height="350"
                             Width="200"
                             BorderBrush="{DynamicResource SystemAccentColor}"
                             CornerRadius="10"
@@ -51,6 +51,14 @@
                                             <TextBlock Text="{Binding Standard.Year}" />
                                             <TextBlock Text=")" />
                                         </StackPanel>
+                                    </WrapPanel>
+
+                                    <WrapPanel
+                                        Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+
+                                        <TextBlock Text="{Binding Standard.Cost}"/>
+                                        <TextBlock Text="р."/>
                                     </WrapPanel>
 
                                     <Button

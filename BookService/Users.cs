@@ -1,6 +1,6 @@
 using System.Text;
 using BookService.Database;
-using BookService.Database.models;
+using BookService.Database.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookService;

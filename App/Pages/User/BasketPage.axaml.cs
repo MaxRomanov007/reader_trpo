@@ -58,9 +58,13 @@ public partial class BasketPage : UserControl
             return;
         }
 
+        if (button.DataContext is not ModifiedBook book)
+        {
+            return;
+        }
+
         await Orders.CreateOrder(Session.UserId, id);
-        var book = _books?.FirstOrDefault(b => b.Standard.Id == id);
-        if (book != null) book.InBasketCount = 1;
+        book.InBasketCount = 1;
     }
 
     private async void ChangeCountNumericUpDown_OnValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)

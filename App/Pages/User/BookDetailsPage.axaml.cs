@@ -1,17 +1,17 @@
-using System;
 using App.Domain.Models;
 using App.Domain.Static;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using BookService;
-using BookService.Database.models;
+using BookService.Database.Models;
 
 namespace App.Pages.User;
 
 public partial class BookDetailsPage : UserControl
 {
     private ModifiedBook _book;
+
     public BookDetailsPage(long id)
     {
         InitializeComponent();
@@ -38,6 +38,7 @@ public partial class BookDetailsPage : UserControl
         {
             return;
         }
+
         if (input.Value is null)
         {
             return;

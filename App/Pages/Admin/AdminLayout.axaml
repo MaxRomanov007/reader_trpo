@@ -17,6 +17,7 @@
             <HyperlinkButton
                 DockPanel.Dock="Right"
                 Margin="5"
+                Click="ExitButton_OnClick"
                 Content="Выйти" />
             <HyperlinkButton
                 DockPanel.Dock="Right"

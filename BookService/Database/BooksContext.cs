@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookService.Database.models;
+using BookService.Database.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookService.Database;
@@ -35,13 +35,14 @@ public partial class BooksContext : DbContext
     public virtual DbSet<UserRole> UserRoles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=(local);Database=reader_trpo;Trusted_Connection=True;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__authors__3213E83FD44AED97");
+            entity.HasKey(e => e.Id).HasName("PK__authors__3213E83F2F8B0AB5");
 
             entity.ToTable("authors");
 
@@ -64,7 +65,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<Book>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__books__3213E83F6C9275B5");
+            entity.HasKey(e => e.Id).HasName("PK__books__3213E83F02FD0D1D");
 
             entity.ToTable("books");
 
@@ -72,6 +73,9 @@ public partial class BooksContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
+            entity.Property(e => e.Cost)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("cost");
             entity.Property(e => e.Count).HasColumnName("count");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.GenreId).HasColumnName("genre_id");
@@ -101,7 +105,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<BookStatus>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__book_sta__3213E83FE64DEB46");
+            entity.HasKey(e => e.Id).HasName("PK__book_sta__3213E83F4A847EC4");
 
             entity.ToTable("book_statuses");
 
@@ -115,7 +119,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<Genre>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__genres__3213E83F2E041720");
+            entity.HasKey(e => e.Id).HasName("PK__genres__3213E83FA859E370");
 
             entity.ToTable("genres");
 
@@ -130,7 +134,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__orders__3213E83FB6CE1374");
+            entity.HasKey(e => e.Id).HasName("PK__orders__3213E83FF26E59D2");
 
             entity.ToTable("orders");
 
@@ -154,7 +158,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<OrderBook>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__order_bo__3213E83F8BFA78A7");
+            entity.HasKey(e => e.Id).HasName("PK__order_bo__3213E83FB6D0370B");
 
             entity.ToTable("order_books");
 
@@ -176,7 +180,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<OrderStatus>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__order_st__3213E83F016C7628");
+            entity.HasKey(e => e.Id).HasName("PK__order_st__3213E83F9BF162BB");
 
             entity.ToTable("order_statuses");
 
@@ -190,7 +194,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F2AA8D9F6");
+            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F92AFB396");
 
             entity.ToTable("users");
 
@@ -214,7 +218,7 @@ public partial class BooksContext : DbContext
 
         modelBuilder.Entity<UserRole>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__user_rol__3213E83FD32AE6B5");
+            entity.HasKey(e => e.Id).HasName("PK__user_rol__3213E83F92474DDE");
 
             entity.ToTable("user_roles");
 

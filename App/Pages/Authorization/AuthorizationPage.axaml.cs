@@ -6,7 +6,7 @@ using App.Pages.User;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using BookService;
-using BookService.Database.models;
+using BookService.Database.Models;
 
 namespace App.Pages.Authorization;
 

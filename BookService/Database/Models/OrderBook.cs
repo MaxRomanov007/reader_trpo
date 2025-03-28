@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookService.Database.models;
+namespace BookService.Database.Models;
 
 public partial class OrderBook
 {

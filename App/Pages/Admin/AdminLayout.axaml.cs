@@ -1,4 +1,5 @@
 using App.Domain.Static;
+using App.Pages.Authorization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -19,5 +20,10 @@ public partial class AdminLayout : UserControl
     private void BooksButton_OnClick(object? sender, RoutedEventArgs e)
     {
         AdminContent.NavigateTo(new AdminBooksPage());
+    }
+
+    private void ExitButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        MainContent.NavigateTo(new AuthorizationPage());
     }
 }

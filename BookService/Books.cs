@@ -1,5 +1,5 @@
 using BookService.Database;
-using BookService.Database.models;
+using BookService.Database.Models;
 using BookService.Utils;
 using Microsoft.EntityFrameworkCore;
 

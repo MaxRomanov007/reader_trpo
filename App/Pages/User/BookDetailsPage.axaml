@@ -35,6 +35,14 @@
                 </WrapPanel>
 
                 <TextBlock Text="{Binding Standard.Description}" />
+                
+                <WrapPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+
+                    <TextBlock Text="{Binding Standard.Cost}"/>
+                    <TextBlock Text="р."/>
+                </WrapPanel>
 
                 <Button
                     Width="160"

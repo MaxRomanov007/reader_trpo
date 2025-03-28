@@ -32,6 +32,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     MaxLength="255"
+                    Watermark="Название книги"
                     Text="{Binding Standard.Name, UpdateSourceTrigger=LostFocus}" />
 
                 <TextBlock
@@ -44,6 +45,7 @@
                     Increment="1"
                     Minimum="0"
                     Maximum="2147483647"
+                    Watermark="Количество книг"
                     Value="{Binding Standard.Count, UpdateSourceTrigger=LostFocus}" />
 
                 <TextBlock
@@ -55,6 +57,7 @@
                     Grid.Column="1"
                     Increment="0.5"
                     FormatString="0.00"
+                    Watermark="Цена на книгу"
                     Value="{Binding Standard.Cost, UpdateSourceTrigger=LostFocus}" />
 
                 <TextBlock
@@ -67,6 +70,7 @@
                     Increment="1"
                     Minimum="0"
                     Maximum="32767"
+                    Watermark="Год издания"
                     Value="{Binding Standard.Year, UpdateSourceTrigger=LostFocus}" />
 
                 <TextBlock
@@ -88,6 +92,7 @@
                 <Button
                     Grid.Row="4"
                     Grid.Column="2"
+                    Click="AddGenreButton_OnClick"
                     Content="Добавить" />
 
                 <TextBlock
@@ -113,6 +118,7 @@
                 <Button
                     Grid.Row="5"
                     Grid.Column="2"
+                    Click="AddAuthorButton_OnClick"
                     Content="Добавить" />
 
                 <TextBlock
@@ -123,10 +129,12 @@
                     x:Name="ImageTextBox"
                     Grid.Row="6"
                     Grid.Column="1"
+                    Watermark="Путь до изображения"
                     Text="{Binding Standard.Image, UpdateSourceTrigger=LostFocus}" />
                 <Button
                     Grid.Row="6"
                     Grid.Column="2"
+                    Click="FindSourceButton_OnClick"
                     Content="Выбрать" />
 
                 <TextBlock

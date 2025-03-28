@@ -204,7 +204,7 @@ public partial class Book : INotifyPropertyChanged, INotifyDataErrorInfo
         }
     }
 
-    private static readonly string[] ImageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".gif" };
+    private static readonly string[] ImageExtensions = [".jpg", ".jpeg", ".png"];
 
     private bool IsImageFile(string filePath)
     {

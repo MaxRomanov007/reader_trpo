@@ -21,7 +21,7 @@ public partial class BookDetailsPage : UserControl
         {
             Standard = book,
             Image = new Bitmap(book.Image),
-            InBasketCount = Orders.GetCountBooksInUserBasket(Session.UserId, id)
+            InOrderCount = Orders.GetCountBooksInUserBasket(Session.UserId, id)
         };
         DataContext = _book;
     }
@@ -29,7 +29,7 @@ public partial class BookDetailsPage : UserControl
     private async void AddToBasketButton_OnClick(object? sender, RoutedEventArgs e)
     {
         await Orders.CreateOrder(Session.UserId, _book.Standard.Id);
-        _book.InBasketCount = 1;
+        _book.InOrderCount = 1;
     }
 
     private async void ChangeCountNumericUpDown_OnValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
@@ -46,6 +46,6 @@ public partial class BookDetailsPage : UserControl
 
         var value = decimal.ToInt32(input.Value ?? 0);
         await Orders.ChangeCount(Session.UserId, _book.Standard.Id, value);
-        _book.InBasketCount = value;
+        _book.InOrderCount = value;
     }
 }

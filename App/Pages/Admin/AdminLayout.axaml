@@ -27,6 +27,7 @@
             <HyperlinkButton
                 DockPanel.Dock="Right"
                 Margin="5"
+                Click="OrdersButton_OnClick"
                 Content="Заказы" />
         </DockPanel>
 

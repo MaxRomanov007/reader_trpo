@@ -8,17 +8,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedOrder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Pages/Admin/OrdersPage.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/AddAuthorWindow.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Windows/AddGenreWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Domain/Models/ModifiedBook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AddEditBookPage.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminBooksPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Admin/AdminLayout.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BooksPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BasketPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/User/BookDetailsPage.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Author.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookService/Utils/Images.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Utils/Images.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Database/Models/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Database/Models/Genre.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Orders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Orders.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +69,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/11af8f98c443d1a15dafaafbe21ee24e91ec83bccda0db8db8d85f9782f92ead/Interactive.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/314af8a5ba96d3b6aeaad61d17179d9662f828477067bba9a4eb876bedef/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f43b1a355af5a0194e830361c15f4b3bb5cfca5c58db15796ccb7c1e1bdf339/MailboxAddress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Лабы/3 курс/2 Семестр/ТРПО/Проект/ReaderTRPO/App/Pages/Admin/AddEditBookPage.axaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -70,7 +83,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.App.executor": "Run",
+    ".NET Project.App.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -123,7 +136,8 @@
       <workItem from="1742921351313" duration="10529000" />
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
-      <workItem from="1743080016958" duration="38857000" />
+      <workItem from="1743080016958" duration="44048000" />
+      <workItem from="1743181367013" duration="1147000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -277,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743154345413</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add edit page fixed">
+      <option name="closed" value="true" />
+      <created>1743166756386</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1743166756386</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +339,8 @@
     <MESSAGE value="AdminBooksPage, AddEditBookPage" />
     <MESSAGE value="added cost fix" />
     <MESSAGE value="Add edit simple page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add edit simple page" />
+    <MESSAGE value="Add edit page fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add edit page fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -327,6 +350,19 @@
           <line>17</line>
           <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\App\Pages\NewPasswordPage.axaml.cs" containingFunctionPresentation="Constructor 'NewPasswordPage'" />
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BookService/Books.cs</url>
+          <line>101</line>
+          <properties documentPath="D:\Лабы\3 курс\2 Семестр\ТРПО\Проект\ReaderTRPO\BookService\Books.cs" containingFunctionPresentation="Method 'UpdateBook'">
+            <startOffsets>
+              <option value="2389" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2423" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

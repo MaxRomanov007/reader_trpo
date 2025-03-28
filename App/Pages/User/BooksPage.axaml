@@ -30,7 +30,7 @@
                             <Grid RowDefinitions="Auto, *">
                                 <StackPanel>
                                     <Viewbox
-                                        Stretch="Uniform"
+                                        Stretch="UniformToFill"
                                         VerticalAlignment="Top"
                                         Width="180"
                                         Height="180">

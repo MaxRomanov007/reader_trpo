@@ -30,7 +30,7 @@ public partial class BasketPage : UserControl
         {
             Standard = o.Book,
             Image = new Bitmap(o.Book.Image),
-            InBasketCount = o.Count
+            InOrderCount = o.Count
         });
         var enumerable = _books?.ToList();
         BooksListItemsControl.ItemsSource = enumerable;
@@ -64,7 +64,7 @@ public partial class BasketPage : UserControl
         }
 
         await Orders.CreateOrder(Session.UserId, id);
-        book.InBasketCount = 1;
+        book.InOrderCount = 1;
     }
 
     private async void ChangeCountNumericUpDown_OnValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
@@ -82,7 +82,7 @@ public partial class BasketPage : UserControl
         var value = decimal.ToInt32(input.Value ?? 0);
         await Orders.ChangeCount(Session.UserId, id, value);
         var book = _books?.FirstOrDefault(b => b.Standard.Id == id);
-        if (book != null) book.InBasketCount = value;
+        if (book != null) book.InOrderCount = value;
     }
 
     private async void Button_OnClick(object? sender, RoutedEventArgs e)

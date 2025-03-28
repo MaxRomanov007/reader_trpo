@@ -41,7 +41,7 @@
                             <Grid RowDefinitions="Auto, *">
                                 <StackPanel>
                                     <Viewbox
-                                        Stretch="Uniform"
+                                        Stretch="UniformToFill"
                                         VerticalAlignment="Top"
                                         Width="180"
                                         Height="180">
@@ -83,7 +83,7 @@
                                             Minimum="0"
                                             Increment="1"
                                             Maximum="{Binding Standard.Count}"
-                                            Value="{Binding InBasketCount}"
+                                            Value="{Binding InOrderCount}"
                                             IsVisible="{Binding IsInBasket}"
                                             Tag="{Binding Standard.Id}"
                                             ValueChanged="ChangeCountNumericUpDown_OnValueChanged" />

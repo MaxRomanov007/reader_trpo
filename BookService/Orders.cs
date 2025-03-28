@@ -197,4 +197,37 @@ public static class Orders
             // ignored
         }
     }
+
+    public static List<Order> GetIncompleteOrders()
+    {
+        using var context = new BooksContext();
+
+        var orders = context.Orders
+            .Include(o => o.Status)
+            .Include(o => o.User)
+            .Include(o => o.OrderBooks)
+            .ThenInclude(ob => ob.Book)
+            .Where(o => o.Status.Name == OrderStatus.InProgress)
+            .ToList();
+
+        return orders;
+    }
+
+    public static async Task SetOrderDone(Order order)
+    {
+        await using var context = new BooksContext();
+
+        order.Status = context.OrderStatuses.First(s => s.Name == OrderStatus.Completed);
+
+        context.Update(order);
+        
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            // ignored
+        }
+    }
 }

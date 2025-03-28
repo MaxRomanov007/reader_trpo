@@ -57,7 +57,7 @@
                     Minimum="0"
                     Increment="1"
                     Maximum="{Binding Standard.Count}"
-                    Value="{Binding InBasketCount}"
+                    Value="{Binding InOrderCount}"
                     IsVisible="{Binding IsInBasket}" 
                     ValueChanged="ChangeCountNumericUpDown_OnValueChanged"/>
             </StackPanel>

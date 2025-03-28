@@ -26,4 +26,9 @@ public partial class AdminLayout : UserControl
     {
         MainContent.NavigateTo(new AuthorizationPage());
     }
+
+    private void OrdersButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AdminContent.NavigateTo(new OrdersPage());
+    }
 }

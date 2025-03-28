@@ -12,7 +12,7 @@ public class ModifiedBook : INotifyPropertyChanged
 
     private Book _standart = null!;
     private Bitmap _image = null!;
-    private int _inBasketCount;
+    private int _inOrderCount;
 
     public Book Standard
     {
@@ -34,18 +34,18 @@ public class ModifiedBook : INotifyPropertyChanged
         }
     }
 
-    public int InBasketCount
+    public int InOrderCount
     {
-        get => _inBasketCount;
+        get => _inOrderCount;
         set
         {
-            _inBasketCount = value;
+            _inOrderCount = value;
             OnPropertyChanged();
             OnPropertyChanged(nameof(IsInBasket));
         }
     }
 
-    public bool IsInBasket => InBasketCount > 0;
+    public bool IsInBasket => InOrderCount > 0;
 
     protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {

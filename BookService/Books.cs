@@ -109,7 +109,6 @@ public static class Books
 
         context.Entry(book).State = EntityState.Detached;
 
-        oldBook.Image = book.Image;
         oldBook.AuthorId = book.AuthorId;
         oldBook.GenreId = book.GenreId;
         oldBook.Cost = book.Cost;
@@ -118,17 +117,15 @@ public static class Books
         oldBook.Count = book.Count;
         oldBook.Description = book.Description;
 
-        oldBook.Image = Path.GetFileName(oldBook.Image);
-
         context.Books.Update(oldBook);
 
         try
         {
             await context.SaveChangesAsync();
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine(e);
+            //ignored
         }
     }
 
@@ -162,5 +159,37 @@ public static class Books
         using var context = new BooksContext();
 
         return context.Genres.ToList();
+    }
+
+    public static async Task AddGenre(Genre genre)
+    {
+        await using var context = new BooksContext();
+
+        context.Genres.Add(genre);
+        
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            //ignored
+        }
+    }
+
+    public static async Task AddAuthor(Author author)
+    {
+        await using var context = new BooksContext();
+
+        context.Authors.Add(author);
+        
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch
+        {
+            //ignored
+        }
     }
 }

@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="refactored db create script">
+    <list default="true" id="ceffc2e8-48e9-4bfe-8113-227568e363ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ReaderTRPO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Pages/Authorization/AuthorizationPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookService/Books.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookService/Books.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,8 @@
       <workItem from="1742963150848" duration="29288000" />
       <workItem from="1743079922489" duration="75000" />
       <workItem from="1743080016958" duration="44048000" />
-      <workItem from="1743181367013" duration="11792000" />
+      <workItem from="1743181367013" duration="11960000" />
+      <workItem from="1743224502785" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -320,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743193527183</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="refactored db script">
+      <option name="closed" value="true" />
+      <created>1743193850770</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1743193850770</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +376,7 @@
     <MESSAGE value="User Orders Page added" />
     <MESSAGE value="some refactoring" />
     <MESSAGE value="refactored db create script" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored db create script" />
+    <MESSAGE value="refactored db script" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored db script" />
   </component>
 </project>

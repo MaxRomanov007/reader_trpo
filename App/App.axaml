@@ -5,26 +5,25 @@
     <Application.Styles>
         <FluentTheme>
             <FluentTheme.Palettes>
-                <ColorPaletteResources x:Key="Light" Accent="#ffb146c2" AltHigh="White" AltLow="White"
-                                       AltMedium="#ffdddddd" AltMediumHigh="White" AltMediumLow="White"
-                                       BaseHigh="Black" BaseLow="#ff00d6e4" BaseMedium="#ff0095a4"
-                                       BaseMediumHigh="#ff006979" BaseMediumLow="#ff007f8e" ChromeAltLow="#ff006979"
-                                       ChromeBlackHigh="Black" ChromeBlackLow="#ff00d6e4" ChromeBlackMedium="#ff006979"
-                                       ChromeBlackMediumLow="#ff0095a4" ChromeDisabledHigh="#ff00d6e4"
-                                       ChromeDisabledLow="#ff0095a4" ChromeGray="#ff007f8e" ChromeHigh="#ff00d6e4"
-                                       ChromeLow="#ff8bf3fa" ChromeMedium="#ff6fedf6" ChromeMediumLow="#ff8bf3fa"
-                                       ChromeWhite="White" ListLow="#ff6fedf6" ListMedium="#ff00d6e4"
-                                       RegionColor="White" />
-                <ColorPaletteResources x:Key="Dark" Accent="#ff018574" AltHigh="Black" AltLow="Black"
-                                       AltMedium="#ff333333" AltMediumHigh="Black" AltMediumLow="Black"
-                                       BaseHigh="White" BaseLow="#ff107c10" BaseMedium="#ff82c083"
-                                       BaseMediumHigh="#ff9fd1a0" BaseMediumLow="#ff499e4a" ChromeAltLow="#ff9fd1a0"
-                                       ChromeBlackHigh="Black" ChromeBlackLow="#ff9fd1a0" ChromeBlackMedium="Black"
-                                       ChromeBlackMediumLow="Black" ChromeDisabledHigh="#ff107c10"
-                                       ChromeDisabledLow="#ff82c083" ChromeGray="#ff66af66" ChromeHigh="#ff66af66"
-                                       ChromeLow="#ff033c03" ChromeMedium="#ff064c06" ChromeMediumLow="#ff0d6c0d"
-                                       ChromeWhite="White" ListLow="#ff064c06" ListMedium="#ff107c10"
-                                       RegionColor="#ff262626" />
+                <ColorPaletteResources x:Key="Light" Accent="#ffcc4d11" AltHigh="White" AltLow="White"
+                                       AltMedium="White" AltMediumHigh="White" AltMediumLow="White" BaseHigh="Black"
+                                       BaseLow="#ff7cbee0" BaseMedium="#ff3282a8" BaseMediumHigh="#ff005a83"
+                                       BaseMediumLow="#ff196e96" ChromeAltLow="#ff005a83" ChromeBlackHigh="Black"
+                                       ChromeBlackLow="#ff7cbee0" ChromeBlackMedium="#ff005a83"
+                                       ChromeBlackMediumLow="#ff3282a8" ChromeDisabledHigh="#ff7cbee0"
+                                       ChromeDisabledLow="#ff3282a8" ChromeGray="#ff196e96" ChromeHigh="#ff7cbee0"
+                                       ChromeLow="#ffc1e9fe" ChromeMedium="#ffb3e0f8" ChromeMediumLow="#ffc1e9fe"
+                                       ChromeWhite="White" ListLow="#ffb3e0f8" ListMedium="#ff7cbee0"
+                                       RegionColor="#ffcfeaff" />
+                <ColorPaletteResources x:Key="Dark" Accent="#ffcc4d11" AltHigh="Black" AltLow="Black" AltMedium="Black"
+                                       AltMediumHigh="Black" AltMediumLow="Black" BaseHigh="White" BaseLow="#ff2f7bad"
+                                       BaseMedium="#ff8dbfdf" BaseMediumHigh="#ffa5d0ec" BaseMediumLow="#ff5e9dc6"
+                                       ChromeAltLow="#ffa5d0ec" ChromeBlackHigh="Black" ChromeBlackLow="#ffa5d0ec"
+                                       ChromeBlackMedium="Black" ChromeBlackMediumLow="Black"
+                                       ChromeDisabledHigh="#ff2f7bad" ChromeDisabledLow="#ff8dbfdf"
+                                       ChromeGray="#ff76aed3" ChromeHigh="#ff76aed3" ChromeLow="#ff093b73"
+                                       ChromeMedium="#ff134b82" ChromeMediumLow="#ff266b9f" ChromeWhite="White"
+                                       ListLow="#ff134b82" ListMedium="#ff2f7bad" RegionColor="#ff0d2644" />
             </FluentTheme.Palettes>
             <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
         </FluentTheme>

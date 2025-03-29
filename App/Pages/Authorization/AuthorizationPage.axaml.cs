@@ -41,6 +41,7 @@ public partial class AuthorizationPage : UserControl
         if (user is null)
         {
             ErrorTextBlock.ShowTemporaryText("Неверный логин или пароль");
+            EnterButton.IsEnabled = true;
             return;
         }
 

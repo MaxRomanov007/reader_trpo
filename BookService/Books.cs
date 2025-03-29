@@ -88,25 +88,24 @@ public static class Books
     {
         await using var context = new BooksContext();
 
-        var oldBook = await context.Books.FirstOrDefaultAsync(b => b.Id == book.Id);
-
-        if (oldBook is null)
-        {
-            return;
-        }
-
-        var file = Path.GetFileName(book.Image);
-        if (oldBook.Image != file)
-        {
-            Images.RemoveImage(oldBook.Image);
-            var fileName = Images.SaveImage(book.Image);
-            if (fileName != string.Empty)
-            {
-                oldBook.Image = fileName;
-            }
-        }
-
         context.Entry(book).State = EntityState.Detached;
+
+        var oldBook = await context.Books.FirstOrDefaultAsync(b => b.Id == book.Id);
+        if (oldBook is null) return;
+
+        var newImageName = Path.GetFileName(book.Image);
+
+        if (oldBook.Image != newImageName)
+        {
+            if (!string.IsNullOrEmpty(oldBook.Image))
+            {
+                Images.RemoveImage(oldBook.Image);
+            }
+
+            var savedFileName = Images.SaveImage(book.Image);
+
+            oldBook.Image = !string.IsNullOrEmpty(savedFileName) ? Path.GetFileName(savedFileName) : null;
+        }
 
         oldBook.AuthorId = book.AuthorId;
         oldBook.GenreId = book.GenreId;
@@ -116,15 +115,13 @@ public static class Books
         oldBook.Count = book.Count;
         oldBook.Description = book.Description;
 
-        context.Books.Update(oldBook);
-
         try
         {
             await context.SaveChangesAsync();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
+            Console.WriteLine($"Ошибка при обновлении книги: {ex.Message}");
         }
     }
 
